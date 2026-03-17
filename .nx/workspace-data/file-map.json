@@ -1,0 +1,178 @@
+{
+  "version": "6.0",
+  "nxVersion": "22.5.4",
+  "pathMappings": {},
+  "nxJsonPlugins": [
+    {
+      "name": "@nx/eslint/plugin",
+      "options": {
+        "targetName": "lint"
+      }
+    },
+    {
+      "name": "@nx/angular/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "testTargetName": "test",
+        "serveTargetName": "serve",
+        "extractI18nTargetName": "extract-i18n"
+      }
+    },
+    {
+      "name": "@nx/playwright/plugin",
+      "options": {
+        "targetName": "e2e"
+      }
+    }
+  ],
+  "fileMap": {
+    "nonProjectFiles": [
+      {
+        "file": ".gitignore",
+        "hash": "15720424346920229987"
+      },
+      {
+        "file": ".prettierignore",
+        "hash": "5407418692668764289"
+      },
+      {
+        "file": ".prettierrc",
+        "hash": "16267754514737964994"
+      },
+      {
+        "file": ".vscode/extensions.json",
+        "hash": "17554676857246940898"
+      },
+      {
+        "file": "README.md",
+        "hash": "16462189138004921110"
+      },
+      {
+        "file": "eslint.config.mjs",
+        "hash": "12926286793420397906"
+      },
+      {
+        "file": "nx.json",
+        "hash": "1018317623353760855"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "16509647993768426124"
+      },
+      {
+        "file": "package.json",
+        "hash": "3353640114291418037"
+      },
+      {
+        "file": "tsconfig.base.json",
+        "hash": "14005454433579094058"
+      }
+    ],
+    "projectFileMap": {
+      "web-e2e": [
+        {
+          "file": "apps/web-e2e/eslint.config.mjs",
+          "hash": "1172734138943286526",
+          "deps": [
+            "npm:eslint-plugin-playwright"
+          ]
+        },
+        {
+          "file": "apps/web-e2e/playwright.config.ts",
+          "hash": "11516038565449462743",
+          "deps": [
+            "npm:@playwright/test",
+            "npm:@nx/playwright",
+            "npm:@nx/devkit"
+          ]
+        },
+        {
+          "file": "apps/web-e2e/project.json",
+          "hash": "11356601415588047577"
+        },
+        {
+          "file": "apps/web-e2e/src/example.spec.ts",
+          "hash": "16019101014373124625",
+          "deps": [
+            "npm:@playwright/test"
+          ]
+        },
+        {
+          "file": "apps/web-e2e/tsconfig.json",
+          "hash": "15726545290547512047"
+        }
+      ],
+      "web": [
+        {
+          "file": "apps/web/eslint.config.mjs",
+          "hash": "16756400681144203361",
+          "deps": [
+            "npm:@nx/eslint-plugin"
+          ]
+        },
+        {
+          "file": "apps/web/project.json",
+          "hash": "7311599075319707571"
+        },
+        {
+          "file": "apps/web/public/favicon.ico",
+          "hash": "9303420814833116677"
+        },
+        {
+          "file": "apps/web/src/app/app.config.ts",
+          "hash": "4436923392211261843",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/web/src/app/app.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/web/src/app/app.html",
+          "hash": "11987652264972370457"
+        },
+        {
+          "file": "apps/web/src/app/app.routes.ts",
+          "hash": "6185150965714414910"
+        },
+        {
+          "file": "apps/web/src/app/app.ts",
+          "hash": "17095286389761971714",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/web/src/app/nx-welcome.ts",
+          "hash": "743651304592271479",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/web/src/index.html",
+          "hash": "4619477563060451315"
+        },
+        {
+          "file": "apps/web/src/main.ts",
+          "hash": "3314327030169821486"
+        },
+        {
+          "file": "apps/web/src/styles.css",
+          "hash": "5195668842064076916"
+        },
+        {
+          "file": "apps/web/tsconfig.app.json",
+          "hash": "18236407445202082987"
+        },
+        {
+          "file": "apps/web/tsconfig.json",
+          "hash": "12063331775287005897"
+        }
+      ]
+    }
+  },
+  "externalNodesHash": "8466539507555951418"
+}
