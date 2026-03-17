@@ -1,6 +1,6 @@
 {
   "version": "6.0",
-  "nxVersion": "22.5.4",
+  "nxVersion": "20.6.0",
   "pathMappings": {},
   "nxJsonPlugins": [
     {
@@ -28,47 +28,388 @@
   "fileMap": {
     "nonProjectFiles": [
       {
-        "file": ".gitignore",
-        "hash": "15720424346920229987"
+        "file": "dist/apps/web/browser/admin-shell.component.css.map",
+        "hash": "13244640665382316848"
       },
       {
         "file": ".prettierignore",
         "hash": "5407418692668764289"
       },
       {
-        "file": ".prettierrc",
-        "hash": "16267754514737964994"
+        "file": "dist/apps/web/browser/auth-shell.component.css.map",
+        "hash": "6773703114795654492"
       },
       {
         "file": ".vscode/extensions.json",
         "hash": "17554676857246940898"
       },
       {
-        "file": "README.md",
-        "hash": "16462189138004921110"
+        "file": "dist/apps/web/browser/index.html",
+        "hash": "15275393556220747649"
+      },
+      {
+        "file": ".prettierrc",
+        "hash": "16267754514737964994"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-3KEPFTFC.js",
+        "hash": "10802070607089368880"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-ZEUN7WRQ.js.map",
+        "hash": "3674409237545359844"
+      },
+      {
+        "file": "tsconfig.base.json",
+        "hash": "14005454433579094058"
+      },
+      {
+        "file": "dist/apps/web/browser/polyfills.js.map",
+        "hash": "9767790005266882621"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-TNN46LT5.js",
+        "hash": "17127718140282406519"
+      },
+      {
+        "file": "dist/apps/web/browser/app-shell.component.css.map",
+        "hash": "2003584932008511254"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-3LRR5DST.js",
+        "hash": "1699579451181729518"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-55Z5PNQW.js",
+        "hash": "13322907311693139322"
+      },
+      {
+        "file": "dist/apps/web/browser/styles.css",
+        "hash": "7874980390418728161"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-OPWE5OH7.js.map",
+        "hash": "16578218282999802309"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-MPLP7HQL.js.map",
+        "hash": "15446873192215307406"
+      },
+      {
+        "file": "dist/apps/web/prerendered-routes.json",
+        "hash": "15049165521752226651"
+      },
+      {
+        "file": "dist/apps/web/browser/polyfills.js",
+        "hash": "372856129345288588"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-MPLP7HQL.js",
+        "hash": "10736316412363805325"
+      },
+      {
+        "file": "saas-ui-architecture.md",
+        "hash": "15270073590223357694"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-L7NE3HIE.js.map",
+        "hash": "13678890545702291399"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-O5JYAI6D.js",
+        "hash": "9042454506180021795"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-OPWE5OH7.js",
+        "hash": "6157769890756893620"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-NJYR5BTR.js.map",
+        "hash": "11303332695217234115"
       },
       {
         "file": "eslint.config.mjs",
         "hash": "12926286793420397906"
       },
       {
+        "file": "saas-base-application-plan.md",
+        "hash": "13874289872179836783"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-TNN46LT5.js.map",
+        "hash": "16503115326544199771"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-L7NE3HIE.js",
+        "hash": "18264460759701656869"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-FST6Z7S4.js",
+        "hash": "12711898968671368226"
+      },
+      {
+        "file": ".npmrc",
+        "hash": "18085261541358865259"
+      },
+      {
+        "file": "dist/apps/web/browser/nx-welcome.css.map",
+        "hash": "2880516504635000845"
+      },
+      {
+        "file": "dist/apps/web/browser/styles.css.map",
+        "hash": "9947606979680686569"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-ZEUN7WRQ.js",
+        "hash": "5250721562897724370"
+      },
+      {
+        "file": "dist/apps/web/browser/main.js",
+        "hash": "15778093863314532448"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-O5JYAI6D.js.map",
+        "hash": "8237731090700585299"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-FST6Z7S4.js.map",
+        "hash": "3506121632347575561"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-55Z5PNQW.js.map",
+        "hash": "16567766043399759662"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-NJYR5BTR.js",
+        "hash": "10909423880981299577"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-3LRR5DST.js.map",
+        "hash": "15746264187847255918"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-RZWATTIL.js.map",
+        "hash": "3129905009197257740"
+      },
+      {
+        "file": "README.md",
+        "hash": "16462189138004921110"
+      },
+      {
         "file": "nx.json",
         "hash": "1018317623353760855"
       },
       {
-        "file": "package-lock.json",
-        "hash": "16509647993768426124"
-      },
-      {
         "file": "package.json",
-        "hash": "3353640114291418037"
+        "hash": "16045417053820722000"
       },
       {
-        "file": "tsconfig.base.json",
-        "hash": "14005454433579094058"
+        "file": "dist/apps/web/browser/chunk-OBGZFZ5J.js",
+        "hash": "15987838462347366"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-OBGZFZ5J.js.map",
+        "hash": "4075085652510688155"
+      },
+      {
+        "file": "dist/apps/web/browser/favicon.ico",
+        "hash": "9303420814833116677"
+      },
+      {
+        "file": "dist/apps/web/browser/main.js.map",
+        "hash": "4563584974354443487"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "13471603336375618023"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-RZWATTIL.js",
+        "hash": "2564060515481022601"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "15720424346920229987"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-3KEPFTFC.js.map",
+        "hash": "12305201600638436546"
       }
     ],
     "projectFileMap": {
+      "web": [
+        {
+          "file": "apps/web/eslint.config.mjs",
+          "hash": "16756400681144203361",
+          "deps": [
+            "npm:@nx/eslint-plugin"
+          ]
+        },
+        {
+          "file": "apps/web/project.json",
+          "hash": "1833638770119316064"
+        },
+        {
+          "file": "apps/web/public/favicon.ico",
+          "hash": "9303420814833116677"
+        },
+        {
+          "file": "apps/web/src/app/app.config.ts",
+          "hash": "9952675485026815494",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "apps/web/src/app/app.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/web/src/app/app.html",
+          "hash": "11987652264972370457"
+        },
+        {
+          "file": "apps/web/src/app/app.routes.ts",
+          "hash": "14222176347327660638",
+          "deps": [
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "apps/web/src/app/app.ts",
+          "hash": "17095286389761971714",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/web/src/app/features/account/account.component.ts",
+          "hash": "6408916886130481127",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/web/src/app/features/admin/users/admin-users.component.ts",
+          "hash": "15721749207249001063",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/web/src/app/features/auth/login/login.component.ts",
+          "hash": "14311347449863968357",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/web/src/app/features/billing/billing.component.ts",
+          "hash": "13778718666961420807",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/web/src/app/features/dashboard/dashboard.component.ts",
+          "hash": "8714281170841374406",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/web/src/app/features/not-found/not-found.component.ts",
+          "hash": "14715822505489044489",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/web/src/app/features/organization/organization.component.ts",
+          "hash": "9495467291442778220",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/web/src/app/features/settings/settings.component.ts",
+          "hash": "12096577842157264000",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/web/src/app/guards/admin.guard.ts",
+          "hash": "3775514926079320013",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "apps/web/src/app/guards/auth.guard.ts",
+          "hash": "8079444630849943506",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "apps/web/src/app/nx-welcome.ts",
+          "hash": "743651304592271479",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/web/src/app/shell/admin-shell/admin-shell.component.ts",
+          "hash": "6449676520878188713",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "apps/web/src/app/shell/app-shell/app-shell.component.ts",
+          "hash": "11562055760996500522",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "apps/web/src/app/shell/auth-shell/auth-shell.component.ts",
+          "hash": "5160104296204000154",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "apps/web/src/index.html",
+          "hash": "4619477563060451315"
+        },
+        {
+          "file": "apps/web/src/main.ts",
+          "hash": "3314327030169821486",
+          "deps": [
+            "npm:@angular/platform-browser"
+          ]
+        },
+        {
+          "file": "apps/web/src/styles.css",
+          "hash": "5195668842064076916"
+        },
+        {
+          "file": "apps/web/tsconfig.app.json",
+          "hash": "18236407445202082987"
+        },
+        {
+          "file": "apps/web/tsconfig.json",
+          "hash": "12063331775287005897"
+        }
+      ],
       "web-e2e": [
         {
           "file": "apps/web-e2e/eslint.config.mjs",
@@ -101,78 +442,7 @@
           "file": "apps/web-e2e/tsconfig.json",
           "hash": "15726545290547512047"
         }
-      ],
-      "web": [
-        {
-          "file": "apps/web/eslint.config.mjs",
-          "hash": "16756400681144203361",
-          "deps": [
-            "npm:@nx/eslint-plugin"
-          ]
-        },
-        {
-          "file": "apps/web/project.json",
-          "hash": "7311599075319707571"
-        },
-        {
-          "file": "apps/web/public/favicon.ico",
-          "hash": "9303420814833116677"
-        },
-        {
-          "file": "apps/web/src/app/app.config.ts",
-          "hash": "4436923392211261843",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "apps/web/src/app/app.css",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "apps/web/src/app/app.html",
-          "hash": "11987652264972370457"
-        },
-        {
-          "file": "apps/web/src/app/app.routes.ts",
-          "hash": "6185150965714414910"
-        },
-        {
-          "file": "apps/web/src/app/app.ts",
-          "hash": "17095286389761971714",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "apps/web/src/app/nx-welcome.ts",
-          "hash": "743651304592271479",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "apps/web/src/index.html",
-          "hash": "4619477563060451315"
-        },
-        {
-          "file": "apps/web/src/main.ts",
-          "hash": "3314327030169821486"
-        },
-        {
-          "file": "apps/web/src/styles.css",
-          "hash": "5195668842064076916"
-        },
-        {
-          "file": "apps/web/tsconfig.app.json",
-          "hash": "18236407445202082987"
-        },
-        {
-          "file": "apps/web/tsconfig.json",
-          "hash": "12063331775287005897"
-        }
       ]
     }
-  },
-  "externalNodesHash": "8466539507555951418"
+  }
 }

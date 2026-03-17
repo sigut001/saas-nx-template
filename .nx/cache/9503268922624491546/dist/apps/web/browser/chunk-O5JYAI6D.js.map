@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["apps/web/src/app/shell/auth-shell/auth-shell.component.ts"],
+  "sourcesContent": ["import { Component } from '@angular/core';\nimport { RouterOutlet } from '@angular/router';\n\n@Component({\n  selector: 'auth-shell',\n  standalone: true,\n  imports: [RouterOutlet],\n  template: `\n    <div class=\"auth-shell\">\n      <div class=\"auth-card\">\n        <router-outlet />\n      </div>\n    </div>\n  `,\n  styles: [`\n    .auth-shell { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #0f0f1a; }\n    .auth-card { background: #1a1a2e; border-radius: 12px; padding: 2.5rem; width: 100%; max-width: 420px; box-shadow: 0 8px 32px rgba(0,0,0,0.4); }\n  `]\n})\nexport class AuthShellComponent {}\n"],
+  "mappings": ";;;;;;;;;;;;;;AAmBM,IAAO,qBAAP,MAAO,oBAAkB;;qCAAlB,qBAAkB;EAAA;yEAAlB,qBAAkB,WAAA,CAAA,CAAA,YAAA,CAAA,GAAA,OAAA,GAAA,MAAA,GAAA,QAAA,CAAA,CAAA,GAAA,YAAA,GAAA,CAAA,GAAA,WAAA,CAAA,GAAA,UAAA,SAAA,4BAAA,IAAA,KAAA;AAAA,QAAA,KAAA,GAAA;AAX3B,MAAA,yBAAA,GAAA,OAAA,CAAA,EAAwB,GAAA,OAAA,CAAA;AAEpB,MAAA,oBAAA,GAAA,eAAA;AACF,MAAA,uBAAA,EAAM;;oBALA,YAAY,GAAA,QAAA,CAAA,8YAAA,EAAA,CAAA;;;sEAaX,oBAAkB,CAAA;UAhB9B;uBACW,cAAY,YACV,MAAI,SACP,CAAC,YAAY,GAAC,UACb;;;;;;KAMT,QAAA,CAAA,wkBAAA,EAAA,CAAA;;;;6EAMU,oBAAkB,EAAA,WAAA,sBAAA,UAAA,6DAAA,YAAA,GAAA,CAAA;AAAA,GAAA;",
+  "names": []
+}

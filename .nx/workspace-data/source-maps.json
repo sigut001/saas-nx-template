@@ -60,6 +60,10 @@
       "apps/web/project.json",
       "nx/core/project-json"
     ],
+    "targets.build.options.index": [
+      "apps/web/project.json",
+      "nx/core/project-json"
+    ],
     "targets.build.options.browser": [
       "apps/web/project.json",
       "nx/core/project-json"
@@ -73,6 +77,10 @@
       "nx/core/project-json"
     ],
     "targets.build.options.styles": [
+      "apps/web/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.polyfills": [
       "apps/web/project.json",
       "nx/core/project-json"
     ],
@@ -294,10 +302,6 @@
       "apps/web-e2e/playwright.config.ts",
       "@nx/playwright/plugin"
     ],
-    "metadata.targetGroups.E2E (CI).2": [
-      "apps/web-e2e/playwright.config.ts",
-      "@nx/playwright/plugin"
-    ],
     "targets.e2e": [
       "apps/web-e2e/playwright.config.ts",
       "@nx/playwright/plugin"
@@ -306,11 +310,11 @@
       "apps/web-e2e/playwright.config.ts",
       "@nx/playwright/plugin"
     ],
-    "targets.e2e.metadata": [
+    "targets.e2e.parallelism": [
       "apps/web-e2e/playwright.config.ts",
       "@nx/playwright/plugin"
     ],
-    "targets.e2e.dependsOn": [
+    "targets.e2e.metadata": [
       "apps/web-e2e/playwright.config.ts",
       "@nx/playwright/plugin"
     ],
@@ -370,11 +374,11 @@
       "apps/web-e2e/playwright.config.ts",
       "@nx/playwright/plugin"
     ],
-    "targets.e2e-ci--src/example.spec.ts.metadata": [
+    "targets.e2e-ci--src/example.spec.ts.parallelism": [
       "apps/web-e2e/playwright.config.ts",
       "@nx/playwright/plugin"
     ],
-    "targets.e2e-ci--src/example.spec.ts.dependsOn": [
+    "targets.e2e-ci--src/example.spec.ts.metadata": [
       "apps/web-e2e/playwright.config.ts",
       "@nx/playwright/plugin"
     ],
@@ -454,6 +458,10 @@
       "apps/web-e2e/playwright.config.ts",
       "@nx/playwright/plugin"
     ],
+    "targets.e2e-ci.parallelism": [
+      "apps/web-e2e/playwright.config.ts",
+      "@nx/playwright/plugin"
+    ],
     "targets.e2e-ci.metadata": [
       "apps/web-e2e/playwright.config.ts",
       "@nx/playwright/plugin"
@@ -483,54 +491,6 @@
       "@nx/playwright/plugin"
     ],
     "targets.e2e-ci.metadata.help.example": [
-      "apps/web-e2e/playwright.config.ts",
-      "@nx/playwright/plugin"
-    ],
-    "targets.e2e-ci--merge-reports": [
-      "apps/web-e2e/playwright.config.ts",
-      "@nx/playwright/plugin"
-    ],
-    "targets.e2e-ci--merge-reports.executor": [
-      "apps/web-e2e/playwright.config.ts",
-      "@nx/playwright/plugin"
-    ],
-    "targets.e2e-ci--merge-reports.cache": [
-      "apps/web-e2e/playwright.config.ts",
-      "@nx/playwright/plugin"
-    ],
-    "targets.e2e-ci--merge-reports.inputs": [
-      "apps/web-e2e/playwright.config.ts",
-      "@nx/playwright/plugin"
-    ],
-    "targets.e2e-ci--merge-reports.outputs": [
-      "apps/web-e2e/playwright.config.ts",
-      "@nx/playwright/plugin"
-    ],
-    "targets.e2e-ci--merge-reports.options": [
-      "apps/web-e2e/playwright.config.ts",
-      "@nx/playwright/plugin"
-    ],
-    "targets.e2e-ci--merge-reports.metadata": [
-      "apps/web-e2e/playwright.config.ts",
-      "@nx/playwright/plugin"
-    ],
-    "targets.e2e-ci--merge-reports.options.config": [
-      "apps/web-e2e/playwright.config.ts",
-      "@nx/playwright/plugin"
-    ],
-    "targets.e2e-ci--merge-reports.options.expectedSuites": [
-      "apps/web-e2e/playwright.config.ts",
-      "@nx/playwright/plugin"
-    ],
-    "targets.e2e-ci--merge-reports.metadata.technologies": [
-      "apps/web-e2e/playwright.config.ts",
-      "@nx/playwright/plugin"
-    ],
-    "targets.e2e-ci--merge-reports.metadata.technologies.0": [
-      "apps/web-e2e/playwright.config.ts",
-      "@nx/playwright/plugin"
-    ],
-    "targets.e2e-ci--merge-reports.metadata.description": [
       "apps/web-e2e/playwright.config.ts",
       "@nx/playwright/plugin"
     ],

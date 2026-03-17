@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["apps/web/src/app/features/auth/login/login.component.ts"],
+  "sourcesContent": ["import { Component } from '@angular/core';\n\n@Component({ selector: 'app-login', standalone: true, template: `<h2>Login</h2><p>Firebase Auth kommt in Phase 3.</p>` })\nexport class LoginComponent {}\n"],
+  "mappings": ";;;;;;;;;;;AAGM,IAAO,iBAAP,MAAO,gBAAc;;qCAAd,iBAAc;EAAA;yEAAd,iBAAc,WAAA,CAAA,CAAA,WAAA,CAAA,GAAA,OAAA,GAAA,MAAA,GAAA,UAAA,SAAA,wBAAA,IAAA,KAAA;AAAA,QAAA,KAAA,GAAA;AADsC,MAAA,yBAAA,GAAA,IAAA;AAAI,MAAA,iBAAA,GAAA,OAAA;AAAK,MAAA,uBAAA;AAAK,MAAA,yBAAA,GAAA,GAAA;AAAG,MAAA,iBAAA,GAAA,iCAAA;AAA+B,MAAA,uBAAA;;;;;sEACpG,gBAAc,CAAA;UAD1B;WAAU,EAAE,UAAU,aAAa,YAAY,MAAM,UAAU,uDAAsD,CAAE;;;;6EAC3G,gBAAc,EAAA,WAAA,kBAAA,UAAA,2DAAA,YAAA,EAAA,CAAA;AAAA,GAAA;",
+  "names": []
+}
