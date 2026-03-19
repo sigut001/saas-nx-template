@@ -1,0 +1,157 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ─── Hilfsfunktionen ──────────────────────────────────────────────────────
+
+    /** Ist der User eingeloggt? */
+    function isAuth() {
+      return request.auth != null;
+    }
+
+    /** Ist der User der Eigentümer des Dokuments? */
+    function isOwner(uid) {
+      return isAuth() && request.auth.uid == uid;
+    }
+
+    /** Hat der User eine bestimmte Rolle in der Org? */
+    function hasOrgRole(orgId, role) {
+      return isAuth() &&
+        exists(/databases/$(database)/documents/organizations/$(orgId)/members/$(request.auth.uid)) &&
+        get(/databases/$(database)/documents/organizations/$(orgId)/members/$(request.auth.uid)).data.role == role;
+    }
+
+    /** Ist der User Mitglied der Org (egal welche Rolle)? */
+    function isOrgMember(orgId) {
+      return isAuth() &&
+        exists(/databases/$(database)/documents/organizations/$(orgId)/members/$(request.auth.uid));
+    }
+
+    /** Ist der User Owner oder Admin der Org? */
+    function isOrgAdmin(orgId) {
+      return hasOrgRole(orgId, 'owner') || hasOrgRole(orgId, 'admin');
+    }
+
+    /** Super-Admin (Firebase Custom Claim) */
+    function isSuperAdmin() {
+      return isAuth() && request.auth.token.role == 'super_admin';
+    }
+
+    /** Prüft ob nur erlaubte Felder in einem Update vorkommen */
+    function onlyFields(fields) {
+      return request.resource.data.diff(resource.data).affectedKeys().hasOnly(fields);
+    }
+
+
+    // ─── users/{uid} ──────────────────────────────────────────────────────────
+    // Feature: immer aktiv
+    match /users/{uid} {
+      // Lesen: nur eigenes Dokument oder Super-Admin
+      allow read: if isOwner(uid) || isSuperAdmin();
+
+      // Erstellen: nur durch die Cloud Function (onUserCreated)
+      // Im Client darf kein User sein eigenes Dokument selbst erstellen
+      allow create: if false;
+
+      // Aktualisieren: nur eigene, nicht-sensitive Felder
+      allow update: if isOwner(uid) &&
+        onlyFields(['displayName', 'photoURL', 'updatedAt', 'activeOrganizationId', 'onboardedAt']);
+
+      // Löschen: nur Super-Admin
+      allow delete: if isSuperAdmin();
+    }
+
+
+    // ─── organizations/{orgId} ────────────────────────────────────────────────
+    // Feature: multiOrganization: true
+    // Wenn multiOrganization: false → Collection existiert nicht → Rules greifen nie
+    match /organizations/{orgId} {
+      // Lesen: Org-Mitglieder oder Super-Admin
+      allow read: if isOrgMember(orgId) || isSuperAdmin();
+
+      // Erstellen: angemeldeter User (beim Onboarding)
+      // Einschränkung: nur wenn kein activeOrganizationId gesetzt
+      allow create: if isAuth();
+
+      // Aktualisieren: nur Org-Owner/Admin
+      allow update: if isOrgAdmin(orgId) || isSuperAdmin();
+
+      // Löschen: nur Super-Admin
+      allow delete: if isSuperAdmin();
+
+      // ── members/{uid} ───────────────────────────────────────────────────────
+      match /members/{memberId} {
+        // Lesen: alle Org-Mitglieder
+        allow read: if isOrgMember(orgId) || isSuperAdmin();
+
+        // Erstellen: Org-Admin oder der erste Owner beim Onboarding
+        allow create: if isOrgAdmin(orgId) || isSuperAdmin() ||
+          // Erster Eintrag beim Onboarding (eigener uid als owner)
+          (isAuth() && memberId == request.auth.uid && request.resource.data.role == 'owner');
+
+        // Rollen ändern: nur Org-Admin
+        allow update: if isOrgAdmin(orgId) || isSuperAdmin();
+
+        // Mitglied entfernen: Org-Admin oder Selbst-Austritt
+        allow delete: if isOrgAdmin(orgId) || (isAuth() && memberId == request.auth.uid) || isSuperAdmin();
+      }
+    }
+
+
+    // ─── subscriptions/{uid} ──────────────────────────────────────────────────
+    // Feature: billing: true
+    // Stripe Extension schreibt hier – Client darf nur lesen
+    match /subscriptions/{uid} {
+      allow read: if isOwner(uid) || isSuperAdmin();
+      allow write: if false; // Nur Cloud Functions / Stripe Extension
+    }
+
+    // ─── customers/{uid} ──────────────────────────────────────────────────────
+    // Feature: billing: true – Stripe Extension
+    match /customers/{uid} {
+      allow read: if isOwner(uid) || isSuperAdmin();
+      allow write: if false;
+
+      match /checkout_sessions/{sessionId} {
+        allow read, write: if isOwner(uid);
+      }
+
+      match /subscriptions/{subscriptionId} {
+        allow read: if isOwner(uid);
+        allow write: if false;
+      }
+    }
+
+
+    // ─── invites/{inviteId} ───────────────────────────────────────────────────
+    // Feature: invitations: true
+    match /invites/{inviteId} {
+      // Token-basierter Zugriff: wer den Token kennt, kann lesen
+      allow read: if isAuth();
+
+      // Erstellen: nur Org-Admins (via Cloud Function besser, aber hier als Fallback)
+      allow create: if isAuth() && isOrgAdmin(resource.data.organizationId);
+
+      // Löschen nach Akzeptierung: Super-Admin oder Org-Admin
+      allow delete: if isSuperAdmin() ||
+        (isAuth() && isOrgAdmin(resource.data.organizationId));
+
+      allow update: if false;
+    }
+
+
+    // ─── notifications/{uid}/items/{notifId} ──────────────────────────────────
+    // Feature: notifications: true
+    match /notifications/{uid}/items/{notifId} {
+      allow read, update: if isOwner(uid);
+      allow create, delete: if false; // Nur Cloud Functions
+    }
+
+
+    // ─── Alles andere blockieren ──────────────────────────────────────────────
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+  }
+}
