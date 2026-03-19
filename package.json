@@ -51,6 +51,7 @@
     "firebase-tools": "^15.10.1",
     "nx": "20.6.0",
     "prettier": "~3.6.2",
+    "stripe": "^20.4.1",
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.19.0"
   }

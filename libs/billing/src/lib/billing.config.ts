@@ -77,8 +77,8 @@ export const DEFAULT_BILLING_FEATURES: BillingFeatures = {
       description: 'Für professionelle Nutzer',
       monthlyPrice: 29,
       annualPrice: 279,
-      stripePriceIdMonthly: '',
-      stripePriceIdAnnual: '',
+      stripePriceIdMonthly: 'price_1TCicB4JZDxnVZhw8qc2lOb4',
+      stripePriceIdAnnual: 'price_1TCicC4JZDxnVZhwaVUUiXdG',
       highlighted: true,
       entitlements: {
         maxSeats: 10,
@@ -95,8 +95,8 @@ export const DEFAULT_BILLING_FEATURES: BillingFeatures = {
       description: 'Für Teams und Unternehmen',
       monthlyPrice: 99,
       annualPrice: 950,
-      stripePriceIdMonthly: '',
-      stripePriceIdAnnual: '',
+      stripePriceIdMonthly: 'price_1TCicD4JZDxnVZhwPoqBUsc9',
+      stripePriceIdAnnual: 'price_1TCicD4JZDxnVZhwSOvc0MNE',
       entitlements: {
         maxSeats: -1,
         storageGB: -1,
