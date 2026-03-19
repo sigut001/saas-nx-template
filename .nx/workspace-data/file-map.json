@@ -1,7 +1,11 @@
 {
   "version": "6.0",
   "nxVersion": "20.6.0",
-  "pathMappings": {},
+  "pathMappings": {
+    "@saas-base/firebase-auth": [
+      "libs/firebase-auth/src/index.ts"
+    ]
+  },
   "nxJsonPlugins": [
     {
       "name": "@nx/eslint/plugin",
@@ -28,215 +32,409 @@
   "fileMap": {
     "nonProjectFiles": [
       {
-        "file": "dist/apps/web/browser/admin-shell.component.css.map",
-        "hash": "13244640665382316848"
-      },
-      {
         "file": ".prettierignore",
         "hash": "5407418692668764289"
       },
       {
-        "file": "dist/apps/web/browser/auth-shell.component.css.map",
-        "hash": "6773703114795654492"
-      },
-      {
-        "file": ".vscode/extensions.json",
-        "hash": "17554676857246940898"
-      },
-      {
-        "file": "dist/apps/web/browser/index.html",
-        "hash": "15275393556220747649"
-      },
-      {
-        "file": ".prettierrc",
-        "hash": "16267754514737964994"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-3KEPFTFC.js",
-        "hash": "10802070607089368880"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-ZEUN7WRQ.js.map",
-        "hash": "3674409237545359844"
+        "file": "TODO.md",
+        "hash": "6890854605541381078"
       },
       {
         "file": "tsconfig.base.json",
-        "hash": "14005454433579094058"
+        "hash": "3024684381123106914"
       },
       {
-        "file": "dist/apps/web/browser/polyfills.js.map",
-        "hash": "9767790005266882621"
+        "file": "dist/apps/web/browser/home.component.css.map",
+        "hash": "8674722870217395191"
       },
       {
-        "file": "dist/apps/web/browser/chunk-TNN46LT5.js",
-        "hash": "17127718140282406519"
+        "file": "dist/apps/web/browser/login.component.css.map",
+        "hash": "15191640340742931097"
       },
       {
-        "file": "dist/apps/web/browser/app-shell.component.css.map",
-        "hash": "2003584932008511254"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-3LRR5DST.js",
-        "hash": "1699579451181729518"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-55Z5PNQW.js",
-        "hash": "13322907311693139322"
-      },
-      {
-        "file": "dist/apps/web/browser/styles.css",
-        "hash": "7874980390418728161"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-OPWE5OH7.js.map",
-        "hash": "16578218282999802309"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-MPLP7HQL.js.map",
-        "hash": "15446873192215307406"
-      },
-      {
-        "file": "dist/apps/web/prerendered-routes.json",
-        "hash": "15049165521752226651"
-      },
-      {
-        "file": "dist/apps/web/browser/polyfills.js",
-        "hash": "372856129345288588"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-MPLP7HQL.js",
-        "hash": "10736316412363805325"
-      },
-      {
-        "file": "saas-ui-architecture.md",
-        "hash": "15270073590223357694"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-L7NE3HIE.js.map",
-        "hash": "13678890545702291399"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-O5JYAI6D.js",
-        "hash": "9042454506180021795"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-OPWE5OH7.js",
-        "hash": "6157769890756893620"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-NJYR5BTR.js.map",
-        "hash": "11303332695217234115"
-      },
-      {
-        "file": "eslint.config.mjs",
-        "hash": "12926286793420397906"
-      },
-      {
-        "file": "saas-base-application-plan.md",
-        "hash": "13874289872179836783"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-TNN46LT5.js.map",
-        "hash": "16503115326544199771"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-L7NE3HIE.js",
-        "hash": "18264460759701656869"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-FST6Z7S4.js",
-        "hash": "12711898968671368226"
-      },
-      {
-        "file": ".npmrc",
-        "hash": "18085261541358865259"
-      },
-      {
-        "file": "dist/apps/web/browser/nx-welcome.css.map",
-        "hash": "2880516504635000845"
+        "file": ".gitignore",
+        "hash": "8876703130493041941"
       },
       {
         "file": "dist/apps/web/browser/styles.css.map",
         "hash": "9947606979680686569"
       },
       {
-        "file": "dist/apps/web/browser/chunk-ZEUN7WRQ.js",
-        "hash": "5250721562897724370"
+        "file": "dist/apps/web/browser/chunk-EV22XIYR.js",
+        "hash": "16988558931153529088"
       },
       {
-        "file": "dist/apps/web/browser/main.js",
-        "hash": "15778093863314532448"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-O5JYAI6D.js.map",
-        "hash": "8237731090700585299"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-FST6Z7S4.js.map",
-        "hash": "3506121632347575561"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-55Z5PNQW.js.map",
-        "hash": "16567766043399759662"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-NJYR5BTR.js",
-        "hash": "10909423880981299577"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-3LRR5DST.js.map",
-        "hash": "15746264187847255918"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-RZWATTIL.js.map",
-        "hash": "3129905009197257740"
-      },
-      {
-        "file": "README.md",
-        "hash": "16462189138004921110"
-      },
-      {
-        "file": "nx.json",
-        "hash": "1018317623353760855"
-      },
-      {
-        "file": "package.json",
-        "hash": "16045417053820722000"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-OBGZFZ5J.js",
-        "hash": "15987838462347366"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-OBGZFZ5J.js.map",
-        "hash": "4075085652510688155"
+        "file": "dist/apps/web/browser/chunk-O6HQMMIA.js",
+        "hash": "5046979554671922158"
       },
       {
         "file": "dist/apps/web/browser/favicon.ico",
         "hash": "9303420814833116677"
       },
       {
+        "file": "dist/apps/web/browser/chunk-VG6STV6K.js.map",
+        "hash": "3506121632347575561"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-PSXB4TMX.js",
+        "hash": "15795520090479880657"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-IBA3O5CQ.js",
+        "hash": "16842492072429667013"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-PSXB4TMX.js.map",
+        "hash": "16567766043399759662"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-CIEKY2WE.js",
+        "hash": "10599293410943176422"
+      },
+      {
+        "file": ".vscode/extensions.json",
+        "hash": "17554676857246940898"
+      },
+      {
+        "file": "saas-base-application-plan.md",
+        "hash": "13874289872179836783"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-XLWZVS6W.js.map",
+        "hash": "13224580727089356544"
+      },
+      {
         "file": "dist/apps/web/browser/main.js.map",
-        "hash": "4563584974354443487"
+        "hash": "14559053747228787488"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-PMGTWKK5.js",
+        "hash": "4125614796855280504"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-PMGTWKK5.js.map",
+        "hash": "9947606979680686569"
+      },
+      {
+        "file": "dist/apps/web/browser/nx-welcome.css.map",
+        "hash": "2880516504635000845"
+      },
+      {
+        "file": "dist/apps/web/browser/onboarding.component.css.map",
+        "hash": "16802307181565942834"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-EWRGETIS.js.map",
+        "hash": "9706382731276376652"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-5MDXYJHO.js",
+        "hash": "361645284680843824"
+      },
+      {
+        "file": "dist/apps/web/browser/polyfills.js",
+        "hash": "372856129345288588"
+      },
+      {
+        "file": ".firebaserc",
+        "hash": "6285941889021113802"
+      },
+      {
+        "file": "dist/apps/web/browser/styles.css",
+        "hash": "7874980390418728161"
+      },
+      {
+        "file": ".prettierrc",
+        "hash": "16267754514737964994"
+      },
+      {
+        "file": "dist/apps/web/browser/polyfills.js.map",
+        "hash": "9767790005266882621"
       },
       {
         "file": "package-lock.json",
-        "hash": "13471603336375618023"
+        "hash": "9558162371806881133"
       },
       {
-        "file": "dist/apps/web/browser/chunk-RZWATTIL.js",
-        "hash": "2564060515481022601"
+        "file": "firebase.json",
+        "hash": "4209578802849712734"
       },
       {
-        "file": ".gitignore",
-        "hash": "15720424346920229987"
+        "file": "dist/apps/web/browser/forgot-password.component.css.map",
+        "hash": "11351212711796094604"
       },
       {
-        "file": "dist/apps/web/browser/chunk-3KEPFTFC.js.map",
+        "file": "dist/apps/web/browser/index.html",
+        "hash": "8837641814184121878"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-JTRY5JBW.js",
+        "hash": "13858808312947495930"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-2ORTDPSO.js.map",
+        "hash": "16503115326544199771"
+      },
+      {
+        "file": "saas-ui-architecture.md",
+        "hash": "15270073590223357694"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-OMJAMIJU.js",
+        "hash": "16536438856055982879"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-IBA3O5CQ.js.map",
+        "hash": "4802249955879600662"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-AMBQDGMG.js",
+        "hash": "13258422503919948574"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-JTRY5JBW.js.map",
+        "hash": "17309419528331444920"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-OMJAMIJU.js.map",
+        "hash": "1416518826298860178"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-AMBQDGMG.js.map",
+        "hash": "3129905009197257740"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-EV22XIYR.js.map",
+        "hash": "2254525057898909214"
+      },
+      {
+        "file": ".npmrc",
+        "hash": "18085261541358865259"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-TUOMYRUW.js.map",
+        "hash": "13678890545702291399"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-TUOMYRUW.js",
+        "hash": "8310510460781774267"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-VG6STV6K.js",
+        "hash": "5096981196583305663"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-5MDXYJHO.js.map",
+        "hash": "16578218282999802309"
+      },
+      {
+        "file": "dist/apps/web/browser/register.component.css.map",
+        "hash": "3560910098152280455"
+      },
+      {
+        "file": "README.md",
+        "hash": "16462189138004921110"
+      },
+      {
+        "file": "dist/apps/web/browser/auth-shell.component.css.map",
+        "hash": "6773703114795654492"
+      },
+      {
+        "file": "dist/apps/web/prerendered-routes.json",
+        "hash": "15049165521752226651"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-CIEKY2WE.js.map",
+        "hash": "11303332695217234115"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-O6HQMMIA.js.map",
         "hash": "12305201600638436546"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-WNM2VNWU.js",
+        "hash": "8874686564401923537"
+      },
+      {
+        "file": "dist/apps/web/browser/app-shell.component.css.map",
+        "hash": "2003584932008511254"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-2ORTDPSO.js",
+        "hash": "6728800351139256045"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-XLWZVS6W.js",
+        "hash": "17006297218867443705"
+      },
+      {
+        "file": "dist/apps/web/browser/main.js",
+        "hash": "10814579537379293574"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-KSOECRB3.js.map",
+        "hash": "15446873192215307406"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-KSOECRB3.js",
+        "hash": "6863338317897420101"
+      },
+      {
+        "file": "package.json",
+        "hash": "23247374923722418"
+      },
+      {
+        "file": "eslint.config.mjs",
+        "hash": "12926286793420397906"
+      },
+      {
+        "file": "firestore.indexes.json",
+        "hash": "5079120912223948982"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-EWRGETIS.js",
+        "hash": "10329900205116018310"
+      },
+      {
+        "file": "dist/apps/web/browser/admin-shell.component.css.map",
+        "hash": "13244640665382316848"
+      },
+      {
+        "file": "nx.json",
+        "hash": "1018317623353760855"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-WNM2VNWU.js.map",
+        "hash": "15746264187847255918"
       }
     ],
     "projectFileMap": {
+      "@saas-base/firebase-auth": [
+        {
+          "file": "libs/firebase-auth/README.md",
+          "hash": "9500232299660788146"
+        },
+        {
+          "file": "libs/firebase-auth/package.json",
+          "hash": "15851927832691507063"
+        },
+        {
+          "file": "libs/firebase-auth/setup.js",
+          "hash": "16181672036353860792"
+        },
+        {
+          "file": "libs/firebase-auth/src/index.ts",
+          "hash": "11679108489398131068"
+        },
+        {
+          "file": "libs/firebase-auth/src/lib/auth-module.config.ts",
+          "hash": "12207589812353305190",
+          "deps": [
+            "npm:@angular/core",
+            "npm:firebase"
+          ]
+        },
+        {
+          "file": "libs/firebase-auth/src/lib/auth-state.service.ts",
+          "hash": "8859717778670091065",
+          "deps": [
+            "npm:@angular/core",
+            "npm:firebase"
+          ]
+        },
+        {
+          "file": "libs/firebase-auth/src/lib/auth.providers.ts",
+          "hash": "15014022506896837304",
+          "deps": [
+            "npm:@angular/core",
+            "npm:firebase"
+          ]
+        },
+        {
+          "file": "libs/firebase-auth/src/lib/auth.service.ts",
+          "hash": "8841387076070132307",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router",
+            "npm:firebase"
+          ]
+        },
+        {
+          "file": "libs/firebase-auth/src/lib/components/forgot-password/forgot-password.component.ts",
+          "hash": "1975011475112527882",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common",
+            "npm:@angular/forms",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "libs/firebase-auth/src/lib/components/login/login.component.ts",
+          "hash": "18345885287660841042",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common",
+            "npm:@angular/forms",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "libs/firebase-auth/src/lib/components/register/register.component.ts",
+          "hash": "12672057445038054394",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common",
+            "npm:@angular/forms",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "libs/firebase-auth/src/lib/guards/admin.guard.ts",
+          "hash": "12951891377694201053",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "libs/firebase-auth/src/lib/guards/auth.guard.ts",
+          "hash": "14598248650075278280",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        }
+      ],
+      "functions": [
+        {
+          "file": "functions/lib/index.js",
+          "hash": "4692473423659677877"
+        },
+        {
+          "file": "functions/lib/index.js.map",
+          "hash": "4901196885808495908"
+        },
+        {
+          "file": "functions/package-lock.json",
+          "hash": "17140765278283987136"
+        },
+        {
+          "file": "functions/package.json",
+          "hash": "14546119621776521678",
+          "deps": [
+            "npm:typescript"
+          ]
+        },
+        {
+          "file": "functions/src/index.ts",
+          "hash": "1057512991332111676"
+        },
+        {
+          "file": "functions/tsconfig.json",
+          "hash": "4618965936994143607"
+        }
+      ],
       "web": [
         {
           "file": "apps/web/eslint.config.mjs",
@@ -255,10 +453,11 @@
         },
         {
           "file": "apps/web/src/app/app.config.ts",
-          "hash": "9952675485026815494",
+          "hash": "10211954587694778006",
           "deps": [
             "npm:@angular/core",
-            "npm:@angular/router"
+            "npm:@angular/router",
+            "@saas-base/firebase-auth"
           ]
         },
         {
@@ -271,16 +470,31 @@
         },
         {
           "file": "apps/web/src/app/app.routes.ts",
-          "hash": "14222176347327660638",
+          "hash": "7862050348310598547",
           "deps": [
-            "npm:@angular/router"
+            "npm:@angular/router",
+            "@saas-base/firebase-auth",
+            [
+              "@saas-base/firebase-auth",
+              "dynamic"
+            ]
           ]
         },
         {
           "file": "apps/web/src/app/app.ts",
           "hash": "17095286389761971714",
           "deps": [
-            "npm:@angular/core"
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "apps/web/src/app/core/guards/onboarding.guard.ts",
+          "hash": "2423364827465126768",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router",
+            "npm:firebase"
           ]
         },
         {
@@ -319,10 +533,30 @@
           ]
         },
         {
+          "file": "apps/web/src/app/features/home/home.component.ts",
+          "hash": "1444249915273605963",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common",
+            "npm:@angular/router",
+            "@saas-base/firebase-auth"
+          ]
+        },
+        {
           "file": "apps/web/src/app/features/not-found/not-found.component.ts",
           "hash": "14715822505489044489",
           "deps": [
             "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/web/src/app/features/onboarding/onboarding.component.ts",
+          "hash": "7776265758758782884",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/forms",
+            "npm:@angular/router",
+            "npm:firebase"
           ]
         },
         {
@@ -359,8 +593,13 @@
           "file": "apps/web/src/app/nx-welcome.ts",
           "hash": "743651304592271479",
           "deps": [
-            "npm:@angular/core"
+            "npm:@angular/core",
+            "npm:@angular/common"
           ]
+        },
+        {
+          "file": "apps/web/src/app/saas.config.ts",
+          "hash": "14048514746688987717"
         },
         {
           "file": "apps/web/src/app/shell/admin-shell/admin-shell.component.ts",
@@ -403,7 +642,7 @@
         },
         {
           "file": "apps/web/tsconfig.app.json",
-          "hash": "18236407445202082987"
+          "hash": "833900359945445042"
         },
         {
           "file": "apps/web/tsconfig.json",

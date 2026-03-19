@@ -1,0 +1,5 @@
+{
+  "name": "@saas-base/firebase-auth",
+  "version": "1.0.0",
+  "description": "Wiederverwendbares Firebase Auth Modul für Angular 19+ Standalone-Apps. Einbindung via: node libs/firebase-auth/setup.js --project=<projektname>"
+}

@@ -1,3 +1,23 @@
 node_modules
 
 .angular
+
+# Secrets – niemals committen!
+.env
+.env.local
+.env*.local
+
+# Firebase Service Account
+firebase-service-account.json
+
+# Environment files mit echten Keys
+apps/web/src/environments/environment.ts
+apps/web/src/environments/environment.prod.ts
+
+# firebase-auth – Secrets
+.env
+.env.local
+.env*.local
+firebase-service-account.json
+apps/web/src/environments/environment.ts
+apps/web/src/environments/environment.prod.ts

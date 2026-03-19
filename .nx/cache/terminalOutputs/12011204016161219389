@@ -1,0 +1,29 @@
+[33m❯[39m Building...
+[32m✔[39m Building...
+[37m[1mInitial chunk files[22m[2m | [22m[1mNames[22m                 [2m | [22m [1mRaw size[22m[39m
+[37m[32mchunk-UIBNHTBQ.js[39m[37m  [2m | [22m[2m-[22m                     [2m | [22m[36m919.98 kB[39m[37m[2m | [22m[39m
+[37m[32mchunk-LJ3WORBN.js[39m[37m  [2m | [22m[2m-[22m                     [2m | [22m[36m854.00 kB[39m[37m[2m | [22m[39m
+[37m[32mchunk-6T3G6QQG.js[39m[37m  [2m | [22m[2m-[22m                     [2m | [22m[36m445.59 kB[39m[37m[2m | [22m[39m
+[37m[32mpolyfills.js[39m[37m       [2m | [22m[2mpolyfills[22m             [2m | [22m [36m89.77 kB[39m[37m[2m | [22m[39m
+[37m[32mmain.js[39m[37m            [2m | [22m[2mmain[22m                  [2m | [22m [36m76.62 kB[39m[37m[2m | [22m[39m
+[37m[32mstyles.css[39m[37m         [2m | [22m[2mstyles[22m                [2m | [22m[36m104 bytes[39m[37m[2m | [22m[39m
+[37m[39m
+[37m[1m [22m                  [2m | [22m[1mInitial total[22m         [2m | [22m  [1m2.39 MB[22m[39m
+[37m[39m
+[37m[1mLazy chunk files[22m   [2m | [22m[1mNames[22m                 [2m | [22m [1mRaw size[22m[39m
+[37m[32mchunk-7JHU6HZH.js[39m[37m  [2m | [22m[2mapp-shell-component[22m   [2m | [22m  [36m5.92 kB[39m[37m[2m | [22m[39m
+[37m[32mchunk-RDNU4ETM.js[39m[37m  [2m | [22m[2madmin-shell-component[22m [2m | [22m  [36m4.71 kB[39m[37m[2m | [22m[39m
+[37m[32mchunk-IOPVKZ7H.js[39m[37m  [2m | [22m[2mauth-shell-component[22m  [2m | [22m  [36m2.61 kB[39m[37m[2m | [22m[39m
+[37m[32mchunk-F7HOKZJK.js[39m[37m  [2m | [22m[2mnot-found-component[22m   [2m | [22m  [36m1.96 kB[39m[37m[2m | [22m[39m
+[37m[32mchunk-KMYPW52P.js[39m[37m  [2m | [22m[2morganization-component[22m[2m | [22m  [36m1.58 kB[39m[37m[2m | [22m[39m
+[37m[32mchunk-3GL37WWJ.js[39m[37m  [2m | [22m[2madmin-users-component[22m [2m | [22m  [36m1.56 kB[39m[37m[2m | [22m[39m
+[37m[32mchunk-AOIGVATG.js[39m[37m  [2m | [22m[2mdashboard-component[22m   [2m | [22m  [36m1.52 kB[39m[37m[2m | [22m[39m
+[37m[32mchunk-Y7HJ2YCQ.js[39m[37m  [2m | [22m[2msettings-component[22m    [2m | [22m  [36m1.50 kB[39m[37m[2m | [22m[39m
+[37m[32mchunk-DKX7FJXA.js[39m[37m  [2m | [22m[2maccount-component[22m [39m[37m    [2m | [22m  [36m1.50 kB[39m[37m[2m | [22m[39m
+[37m[32mchunk-Q3CBOYQ4.js[39m[37m  [2m | [22m[2mbilling-component[22m     [2m | [22m  [36m1.50 kB[39m[37m[2m | [22m[39m
+[37m[32mchunk-B7BOO5JT.js[39m[37m  [2m | [22m[2mindex[22m                 [2m | [22m[36m502 bytes[39m[37m[2m | [22m[39m
+[37m[39m
+[37mApplication bundle generation complete. [3.957 seconds][39m
+[37m[39m
+[37mOutput location: C:\Users\Simon\Desktop\web-entwicklung\submodules\saas-nx-template\dist\apps\web[39m
+[37m[39m

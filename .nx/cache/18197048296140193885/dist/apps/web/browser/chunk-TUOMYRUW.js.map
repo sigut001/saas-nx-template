@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["apps/web/src/app/features/admin/users/admin-users.component.ts"],
+  "sourcesContent": ["import { Component } from '@angular/core';\n\n@Component({ selector: 'app-admin-users', standalone: true, template: `<h1>Admin – Users</h1><p>User-Verwaltung kommt in Phase 5.</p>` })\nexport class AdminUsersComponent {}\n"],
+  "mappings": ";;;;;;;;;;;AAGM,IAAO,sBAAP,MAAO,qBAAmB;;qCAAnB,sBAAmB;EAAA;yEAAnB,sBAAmB,WAAA,CAAA,CAAA,iBAAA,CAAA,GAAA,OAAA,GAAA,MAAA,GAAA,UAAA,SAAA,6BAAA,IAAA,KAAA;AAAA,QAAA,KAAA,GAAA;AADuC,MAAA,yBAAA,GAAA,IAAA;AAAI,MAAA,iBAAA,GAAA,oBAAA;AAAa,MAAA,uBAAA;AAAK,MAAA,yBAAA,GAAA,GAAA;AAAG,MAAA,iBAAA,GAAA,mCAAA;AAAiC,MAAA,uBAAA;;;;;sEACpH,qBAAmB,CAAA;UAD/B;WAAU,EAAE,UAAU,mBAAmB,YAAY,MAAM,UAAU,sEAAgE,CAAE;;;;6EAC3H,qBAAmB,EAAA,WAAA,uBAAA,UAAA,kEAAA,YAAA,EAAA,CAAA;AAAA,GAAA;",
+  "names": []
+}
