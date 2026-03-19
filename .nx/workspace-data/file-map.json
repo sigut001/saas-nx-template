@@ -32,284 +32,414 @@
   "fileMap": {
     "nonProjectFiles": [
       {
-        "file": ".prettierignore",
-        "hash": "5407418692668764289"
+        "file": "docs/architecture.md",
+        "hash": "7979952483365163617"
       },
       {
-        "file": "TODO.md",
-        "hash": "6890854605541381078"
-      },
-      {
-        "file": "tsconfig.base.json",
-        "hash": "3024684381123106914"
-      },
-      {
-        "file": "dist/apps/web/browser/home.component.css.map",
-        "hash": "8674722870217395191"
-      },
-      {
-        "file": "dist/apps/web/browser/login.component.css.map",
-        "hash": "15191640340742931097"
-      },
-      {
-        "file": ".gitignore",
-        "hash": "8876703130493041941"
-      },
-      {
-        "file": "dist/apps/web/browser/styles.css.map",
-        "hash": "9947606979680686569"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-EV22XIYR.js",
-        "hash": "16988558931153529088"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-O6HQMMIA.js",
-        "hash": "5046979554671922158"
-      },
-      {
-        "file": "dist/apps/web/browser/favicon.ico",
-        "hash": "9303420814833116677"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-VG6STV6K.js.map",
-        "hash": "3506121632347575561"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-PSXB4TMX.js",
-        "hash": "15795520090479880657"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-IBA3O5CQ.js",
-        "hash": "16842492072429667013"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-PSXB4TMX.js.map",
-        "hash": "16567766043399759662"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-CIEKY2WE.js",
-        "hash": "10599293410943176422"
-      },
-      {
-        "file": ".vscode/extensions.json",
-        "hash": "17554676857246940898"
-      },
-      {
-        "file": "saas-base-application-plan.md",
-        "hash": "13874289872179836783"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-XLWZVS6W.js.map",
-        "hash": "13224580727089356544"
-      },
-      {
-        "file": "dist/apps/web/browser/main.js.map",
-        "hash": "14559053747228787488"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-PMGTWKK5.js",
-        "hash": "4125614796855280504"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-PMGTWKK5.js.map",
-        "hash": "9947606979680686569"
-      },
-      {
-        "file": "dist/apps/web/browser/nx-welcome.css.map",
-        "hash": "2880516504635000845"
-      },
-      {
-        "file": "dist/apps/web/browser/onboarding.component.css.map",
-        "hash": "16802307181565942834"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-EWRGETIS.js.map",
-        "hash": "9706382731276376652"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-5MDXYJHO.js",
-        "hash": "361645284680843824"
-      },
-      {
-        "file": "dist/apps/web/browser/polyfills.js",
-        "hash": "372856129345288588"
-      },
-      {
-        "file": ".firebaserc",
-        "hash": "6285941889021113802"
-      },
-      {
-        "file": "dist/apps/web/browser/styles.css",
-        "hash": "7874980390418728161"
-      },
-      {
-        "file": ".prettierrc",
-        "hash": "16267754514737964994"
-      },
-      {
-        "file": "dist/apps/web/browser/polyfills.js.map",
-        "hash": "9767790005266882621"
-      },
-      {
-        "file": "package-lock.json",
-        "hash": "9558162371806881133"
-      },
-      {
-        "file": "firebase.json",
-        "hash": "4209578802849712734"
-      },
-      {
-        "file": "dist/apps/web/browser/forgot-password.component.css.map",
-        "hash": "11351212711796094604"
-      },
-      {
-        "file": "dist/apps/web/browser/index.html",
-        "hash": "8837641814184121878"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-JTRY5JBW.js",
-        "hash": "13858808312947495930"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-2ORTDPSO.js.map",
-        "hash": "16503115326544199771"
-      },
-      {
-        "file": "saas-ui-architecture.md",
-        "hash": "15270073590223357694"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-OMJAMIJU.js",
-        "hash": "16536438856055982879"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-IBA3O5CQ.js.map",
-        "hash": "4802249955879600662"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-AMBQDGMG.js",
-        "hash": "13258422503919948574"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-JTRY5JBW.js.map",
-        "hash": "17309419528331444920"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-OMJAMIJU.js.map",
-        "hash": "1416518826298860178"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-AMBQDGMG.js.map",
-        "hash": "3129905009197257740"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-EV22XIYR.js.map",
-        "hash": "2254525057898909214"
-      },
-      {
-        "file": ".npmrc",
-        "hash": "18085261541358865259"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-TUOMYRUW.js.map",
-        "hash": "13678890545702291399"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-TUOMYRUW.js",
-        "hash": "8310510460781774267"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-VG6STV6K.js",
-        "hash": "5096981196583305663"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-5MDXYJHO.js.map",
-        "hash": "16578218282999802309"
-      },
-      {
-        "file": "dist/apps/web/browser/register.component.css.map",
-        "hash": "3560910098152280455"
-      },
-      {
-        "file": "README.md",
-        "hash": "16462189138004921110"
-      },
-      {
-        "file": "dist/apps/web/browser/auth-shell.component.css.map",
-        "hash": "6773703114795654492"
-      },
-      {
-        "file": "dist/apps/web/prerendered-routes.json",
-        "hash": "15049165521752226651"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-CIEKY2WE.js.map",
-        "hash": "11303332695217234115"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-O6HQMMIA.js.map",
-        "hash": "12305201600638436546"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-WNM2VNWU.js",
-        "hash": "8874686564401923537"
-      },
-      {
-        "file": "dist/apps/web/browser/app-shell.component.css.map",
-        "hash": "2003584932008511254"
-      },
-      {
-        "file": "dist/apps/web/browser/chunk-2ORTDPSO.js",
-        "hash": "6728800351139256045"
+        "file": "dist/apps/web/browser/upgrade-dialog.component.css.map",
+        "hash": "10528407055649605437"
       },
       {
         "file": "dist/apps/web/browser/chunk-XLWZVS6W.js",
         "hash": "17006297218867443705"
       },
       {
-        "file": "dist/apps/web/browser/main.js",
-        "hash": "10814579537379293574"
+        "file": "dist/apps/web/browser/chunk-OMJAMIJU.js.map",
+        "hash": "1416518826298860178"
       },
       {
-        "file": "dist/apps/web/browser/chunk-KSOECRB3.js.map",
-        "hash": "15446873192215307406"
+        "file": ".npmrc",
+        "hash": "18085261541358865259"
       },
       {
-        "file": "dist/apps/web/browser/chunk-KSOECRB3.js",
-        "hash": "6863338317897420101"
+        "file": "dist/apps/web/browser/chunk-JTRY5JBW.js",
+        "hash": "13858808312947495930"
       },
       {
-        "file": "package.json",
-        "hash": "23247374923722418"
+        "file": "dist/apps/web/browser/chunk-EV22XIYR.js.map",
+        "hash": "2254525057898909214"
       },
       {
-        "file": "eslint.config.mjs",
-        "hash": "12926286793420397906"
+        "file": "firestore.rules",
+        "hash": "1262413100126944614"
+      },
+      {
+        "file": "dist/apps/web/browser/favicon.ico",
+        "hash": "9303420814833116677"
+      },
+      {
+        "file": "dist/apps/web/browser/home.component.css.map",
+        "hash": "8674722870217395191"
+      },
+      {
+        "file": "TODO.md",
+        "hash": "6890854605541381078"
+      },
+      {
+        "file": "dist/apps/web/browser/pricing.component.css.map",
+        "hash": "1690574441869692290"
+      },
+      {
+        "file": "README.md",
+        "hash": "16462189138004921110"
+      },
+      {
+        "file": "dist/apps/web/browser/plan-badge.component.css.map",
+        "hash": "1596090882579687708"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-TUOMYRUW.js",
+        "hash": "8310510460781774267"
+      },
+      {
+        "file": "dist/apps/web/browser/styles.css.map",
+        "hash": "9947606979680686569"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-WNM2VNWU.js.map",
+        "hash": "15746264187847255918"
+      },
+      {
+        "file": ".vscode/extensions.json",
+        "hash": "17554676857246940898"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-PMGTWKK5.js.map",
+        "hash": "9947606979680686569"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-5MDXYJHO.js",
+        "hash": "361645284680843824"
+      },
+      {
+        "file": ".prettierignore",
+        "hash": "5407418692668764289"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-PSXB4TMX.js",
+        "hash": "15795520090479880657"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-OMJAMIJU.js",
+        "hash": "16536438856055982879"
+      },
+      {
+        "file": "saas-ui-architecture.md",
+        "hash": "15270073590223357694"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-VG6STV6K.js.map",
+        "hash": "3506121632347575561"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-O6HQMMIA.js.map",
+        "hash": "12305201600638436546"
       },
       {
         "file": "firestore.indexes.json",
         "hash": "5079120912223948982"
       },
       {
-        "file": "dist/apps/web/browser/chunk-EWRGETIS.js",
-        "hash": "10329900205116018310"
+        "file": "dist/apps/web/browser/nx-welcome.css.map",
+        "hash": "2880516504635000845"
       },
       {
-        "file": "dist/apps/web/browser/admin-shell.component.css.map",
-        "hash": "13244640665382316848"
+        "file": "dist/apps/web/browser/chunk-JTRY5JBW.js.map",
+        "hash": "17309419528331444920"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-EWRGETIS.js.map",
+        "hash": "9706382731276376652"
+      },
+      {
+        "file": "dist/apps/web/browser/register.component.css.map",
+        "hash": "3560910098152280455"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-XLWZVS6W.js.map",
+        "hash": "13224580727089356544"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-5MDXYJHO.js.map",
+        "hash": "16578218282999802309"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-KSOECRB3.js",
+        "hash": "6863338317897420101"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-PMGTWKK5.js",
+        "hash": "4125614796855280504"
+      },
+      {
+        "file": "scripts/test-firestore-rules.ts",
+        "hash": "14252540023225034707"
       },
       {
         "file": "nx.json",
         "hash": "1018317623353760855"
       },
       {
-        "file": "dist/apps/web/browser/chunk-WNM2VNWU.js.map",
-        "hash": "15746264187847255918"
+        "file": "dist/apps/web/browser/polyfills.js.map",
+        "hash": "9767790005266882621"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-AMBQDGMG.js",
+        "hash": "13258422503919948574"
+      },
+      {
+        "file": ".firebaserc",
+        "hash": "6285941889021113802"
+      },
+      {
+        "file": "dist/apps/web/browser/index.html",
+        "hash": "8837641814184121878"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-2ORTDPSO.js",
+        "hash": "6728800351139256045"
+      },
+      {
+        "file": "dist/apps/web/browser/forgot-password.component.css.map",
+        "hash": "11351212711796094604"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-TUOMYRUW.js.map",
+        "hash": "13678890545702291399"
+      },
+      {
+        "file": "saas-base-application-plan.md",
+        "hash": "13874289872179836783"
+      },
+      {
+        "file": "dist/apps/web/browser/app-shell.component.css.map",
+        "hash": "2003584932008511254"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-PSXB4TMX.js.map",
+        "hash": "16567766043399759662"
+      },
+      {
+        "file": "firebase.json",
+        "hash": "4209578802849712734"
+      },
+      {
+        "file": "docs/contributing.md",
+        "hash": "12024381265877208587"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-CIEKY2WE.js.map",
+        "hash": "11303332695217234115"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-EV22XIYR.js",
+        "hash": "16988558931153529088"
+      },
+      {
+        "file": "eslint.config.mjs",
+        "hash": "12926286793420397906"
+      },
+      {
+        "file": "package.json",
+        "hash": "2299977528929941491"
+      },
+      {
+        "file": "docs/configuration.md",
+        "hash": "13269993399438112000"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-KSOECRB3.js.map",
+        "hash": "15446873192215307406"
+      },
+      {
+        "file": "docs/features.md",
+        "hash": "11564424428693321612"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-IBA3O5CQ.js",
+        "hash": "16842492072429667013"
+      },
+      {
+        "file": "dist/apps/web/browser/onboarding.component.css.map",
+        "hash": "16802307181565942834"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-2ORTDPSO.js.map",
+        "hash": "16503115326544199771"
+      },
+      {
+        "file": "docs/README.md",
+        "hash": "14196872906730280602"
+      },
+      {
+        "file": "dist/apps/web/browser/polyfills.js",
+        "hash": "372856129345288588"
+      },
+      {
+        "file": "dist/apps/web/prerendered-routes.json",
+        "hash": "15049165521752226651"
+      },
+      {
+        "file": ".prettierrc",
+        "hash": "16267754514737964994"
+      },
+      {
+        "file": "tsconfig.base.json",
+        "hash": "3024684381123106914"
+      },
+      {
+        "file": "dist/apps/web/browser/main.js.map",
+        "hash": "7516024190485077595"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-IBA3O5CQ.js.map",
+        "hash": "4802249955879600662"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-AMBQDGMG.js.map",
+        "hash": "3129905009197257740"
+      },
+      {
+        "file": "dist/apps/web/browser/admin-shell.component.css.map",
+        "hash": "13244640665382316848"
+      },
+      {
+        "file": "dist/apps/web/browser/main.js",
+        "hash": "15114102105963789705"
+      },
+      {
+        "file": "dist/apps/web/browser/login.component.css.map",
+        "hash": "15191640340742931097"
+      },
+      {
+        "file": "dist/apps/web/browser/auth-shell.component.css.map",
+        "hash": "6773703114795654492"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-CIEKY2WE.js",
+        "hash": "10599293410943176422"
+      },
+      {
+        "file": "dist/apps/web/browser/billing.component.css.map",
+        "hash": "16333086906296433009"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-O6HQMMIA.js",
+        "hash": "5046979554671922158"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-WNM2VNWU.js",
+        "hash": "8874686564401923537"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-VG6STV6K.js",
+        "hash": "5096981196583305663"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "8876703130493041941"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "11801496025547836436"
+      },
+      {
+        "file": "dist/apps/web/browser/chunk-EWRGETIS.js",
+        "hash": "10329900205116018310"
+      },
+      {
+        "file": "dist/apps/web/browser/styles.css",
+        "hash": "7874980390418728161"
       }
     ],
     "projectFileMap": {
+      "@saas-base/billing": [
+        {
+          "file": "libs/billing/INTEGRATION.md",
+          "hash": "11115540352631412471"
+        },
+        {
+          "file": "libs/billing/package.json",
+          "hash": "17438880815366376706",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router",
+            "npm:firebase",
+            "npm:@stripe/stripe-js"
+          ]
+        },
+        {
+          "file": "libs/billing/src/index.ts",
+          "hash": "13070294965021254697"
+        },
+        {
+          "file": "libs/billing/src/lib/billing.config.ts",
+          "hash": "13589047522139682290",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "libs/billing/src/lib/billing.providers.ts",
+          "hash": "10747685530586086282",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "libs/billing/src/lib/billing.service.ts",
+          "hash": "9631607646156821752",
+          "deps": [
+            "npm:@angular/core",
+            "npm:firebase",
+            "npm:@stripe/stripe-js"
+          ]
+        },
+        {
+          "file": "libs/billing/src/lib/components/billing/billing.component.ts",
+          "hash": "17416130349954041417",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "libs/billing/src/lib/components/plan-badge/plan-badge.component.ts",
+          "hash": "13456167464350863907",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "libs/billing/src/lib/components/pricing/pricing.component.ts",
+          "hash": "11559354321007938248",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "libs/billing/src/lib/components/upgrade-dialog/upgrade-dialog.component.ts",
+          "hash": "14062238619456160818",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "libs/billing/src/lib/guards/plan.guard.ts",
+          "hash": "12767504246733609556",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        }
+      ],
       "@saas-base/firebase-auth": [
+        {
+          "file": "libs/firebase-auth/INTEGRATION.md",
+          "hash": "13477537398534117300"
+        },
         {
           "file": "libs/firebase-auth/README.md",
           "hash": "9500232299660788146"
@@ -406,33 +536,37 @@
           ]
         }
       ],
-      "functions": [
+      "web-e2e": [
         {
-          "file": "functions/lib/index.js",
-          "hash": "4692473423659677877"
-        },
-        {
-          "file": "functions/lib/index.js.map",
-          "hash": "4901196885808495908"
-        },
-        {
-          "file": "functions/package-lock.json",
-          "hash": "17140765278283987136"
-        },
-        {
-          "file": "functions/package.json",
-          "hash": "14546119621776521678",
+          "file": "apps/web-e2e/eslint.config.mjs",
+          "hash": "1172734138943286526",
           "deps": [
-            "npm:typescript"
+            "npm:eslint-plugin-playwright"
           ]
         },
         {
-          "file": "functions/src/index.ts",
-          "hash": "1057512991332111676"
+          "file": "apps/web-e2e/playwright.config.ts",
+          "hash": "11516038565449462743",
+          "deps": [
+            "npm:@playwright/test",
+            "npm:@nx/playwright",
+            "npm:@nx/devkit"
+          ]
         },
         {
-          "file": "functions/tsconfig.json",
-          "hash": "4618965936994143607"
+          "file": "apps/web-e2e/project.json",
+          "hash": "11356601415588047577"
+        },
+        {
+          "file": "apps/web-e2e/src/example.spec.ts",
+          "hash": "16019101014373124625",
+          "deps": [
+            "npm:@playwright/test"
+          ]
+        },
+        {
+          "file": "apps/web-e2e/tsconfig.json",
+          "hash": "15726545290547512047"
         }
       ],
       "web": [
@@ -649,37 +783,33 @@
           "hash": "12063331775287005897"
         }
       ],
-      "web-e2e": [
+      "functions": [
         {
-          "file": "apps/web-e2e/eslint.config.mjs",
-          "hash": "1172734138943286526",
+          "file": "functions/lib/index.js",
+          "hash": "4692473423659677877"
+        },
+        {
+          "file": "functions/lib/index.js.map",
+          "hash": "4901196885808495908"
+        },
+        {
+          "file": "functions/package-lock.json",
+          "hash": "17140765278283987136"
+        },
+        {
+          "file": "functions/package.json",
+          "hash": "14546119621776521678",
           "deps": [
-            "npm:eslint-plugin-playwright"
+            "npm:typescript"
           ]
         },
         {
-          "file": "apps/web-e2e/playwright.config.ts",
-          "hash": "11516038565449462743",
-          "deps": [
-            "npm:@playwright/test",
-            "npm:@nx/playwright",
-            "npm:@nx/devkit"
-          ]
+          "file": "functions/src/index.ts",
+          "hash": "1057512991332111676"
         },
         {
-          "file": "apps/web-e2e/project.json",
-          "hash": "11356601415588047577"
-        },
-        {
-          "file": "apps/web-e2e/src/example.spec.ts",
-          "hash": "16019101014373124625",
-          "deps": [
-            "npm:@playwright/test"
-          ]
-        },
-        {
-          "file": "apps/web-e2e/tsconfig.json",
-          "hash": "15726545290547512047"
+          "file": "functions/tsconfig.json",
+          "hash": "4618965936994143607"
         }
       ]
     }

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["apps/web/src/app/features/settings/settings.component.ts"],
+  "sourcesContent": ["import { Component } from '@angular/core';\n\n@Component({ selector: 'app-settings', standalone: true, template: `<h1>Settings</h1><p>Einstellungen kommen in Phase 5.</p>` })\nexport class SettingsComponent {}\n"],
+  "mappings": ";;;;;;;;;;;AAGM,IAAO,oBAAP,MAAO,mBAAiB;;qCAAjB,oBAAiB;EAAA;yEAAjB,oBAAiB,WAAA,CAAA,CAAA,cAAA,CAAA,GAAA,OAAA,GAAA,MAAA,GAAA,UAAA,SAAA,2BAAA,IAAA,KAAA;AAAA,QAAA,KAAA,GAAA;AADsC,MAAA,yBAAA,GAAA,IAAA;AAAI,MAAA,iBAAA,GAAA,UAAA;AAAQ,MAAA,uBAAA;AAAK,MAAA,yBAAA,GAAA,GAAA;AAAG,MAAA,iBAAA,GAAA,kCAAA;AAAgC,MAAA,uBAAA;;;;;sEAC3G,mBAAiB,CAAA;UAD7B;WAAU,EAAE,UAAU,gBAAgB,YAAY,MAAM,UAAU,2DAA0D,CAAE;;;;6EAClH,mBAAiB,EAAA,WAAA,qBAAA,UAAA,4DAAA,YAAA,EAAA,CAAA;AAAA,GAAA;",
+  "names": []
+}

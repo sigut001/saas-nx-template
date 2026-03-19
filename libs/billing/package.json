@@ -1,0 +1,10 @@
+{
+  "name": "@saas-base/billing",
+  "version": "1.0.0",
+  "peerDependencies": {
+    "@angular/core": ">=17.0.0",
+    "@angular/router": ">=17.0.0",
+    "firebase": ">=10.0.0",
+    "@stripe/stripe-js": ">=3.0.0"
+  }
+}
