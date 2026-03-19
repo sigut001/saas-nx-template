@@ -1,7 +1,7 @@
-import { Component, inject, computed } from '@angular/core';
+import { Component, inject, computed, signal, OnInit } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { BillingService } from '../../billing.service';
-import { RouterLink } from '@angular/router';
+import { RouterLink, ActivatedRoute, Router } from '@angular/router';
 import { PlanBadgeComponent } from '../plan-badge/plan-badge.component';
 
 @Component({
@@ -55,6 +55,26 @@ import { PlanBadgeComponent } from '../plan-badge/plan-badge.component';
         </div>
       }
     </div>
+
+    <!-- ─── Success Modal ─────────────────────────────────────────── -->
+    @if (showSuccessModal()) {
+      <div class="modal-backdrop" (click)="closeModal()">
+        <div class="modal-card" (click)="$event.stopPropagation()">
+          <div class="modal-icon">🎉</div>
+          <h2>Zahlung erfolgreich!</h2>
+          <p>
+            Dein Plan wurde auf <strong>{{ billing.currentPlan()?.name ?? 'Pro' }}</strong> aktualisiert.<br>
+            Alle neuen Features sind sofort verfügbar.
+          </p>
+          <div class="modal-actions">
+            <a class="btn-test" routerLink="/app/pro-feature" (click)="closeModal()">
+              ✅ Pro Feature testen →
+            </a>
+            <button class="btn-close" (click)="closeModal()">Schließen</button>
+          </div>
+        </div>
+      </div>
+    }
   `,
   styles: [`
     .billing-wrap { padding: 2rem; max-width: 640px; }
@@ -96,10 +116,43 @@ import { PlanBadgeComponent } from '../plan-badge/plan-badge.component';
     }
     .e-key { font-size: 0.75rem; color: #6b6b8a; }
     .e-val { font-size: 0.95rem; font-weight: 600; color: #e8e8f0; }
+
+    /* ─── Modal ─── */
+    .modal-backdrop {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.7);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 9999; animation: fadeIn 0.2s ease;
+    }
+    .modal-card {
+      background: #1c1e2e; border: 1px solid #22c55e;
+      box-shadow: 0 0 60px rgba(34,197,94,0.2);
+      border-radius: 20px; padding: 2.5rem; max-width: 420px; width: 90%;
+      text-align: center; animation: slideUp 0.25s ease;
+    }
+    .modal-icon { font-size: 3rem; margin-bottom: 1rem; }
+    .modal-card h2 { color: #e8e8f0; font-size: 1.5rem; margin-bottom: 0.75rem; }
+    .modal-card p  { color: #8b8ca8; line-height: 1.7; margin-bottom: 1.75rem; }
+    .modal-actions { display: flex; flex-direction: column; gap: 0.75rem; }
+    .btn-test {
+      display: block; padding: 0.75rem; background: #22c55e;
+      color: #fff; border-radius: 10px; font-weight: 700;
+      text-decoration: none; transition: opacity 0.15s;
+    }
+    .btn-test:hover { opacity: 0.85; }
+    .btn-close {
+      background: none; border: none; color: #6b6b8a;
+      cursor: pointer; font-size: 0.875rem;
+    }
+    @keyframes fadeIn  { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
   `]
 })
-export class BillingComponent {
+export class BillingComponent implements OnInit {
   readonly billing = inject(BillingService);
+  private readonly route  = inject(ActivatedRoute);
+  private readonly router = inject(Router);
+
+  readonly showSuccessModal = signal(false);
 
   readonly statusClass = computed(() => this.billing.subscriptionStatus());
   readonly statusLabel = computed(() => {
@@ -126,6 +179,18 @@ export class BillingComponent {
         : (val === -1 ? '∞' : String(val)),
     }));
   });
+
+  ngOnInit(): void {
+    // Stripe leitet nach Checkout mit ?session_id= zurück → Modal zeigen
+    const sessionId = this.route.snapshot.queryParamMap.get('session_id');
+    if (sessionId) {
+      this.showSuccessModal.set(true);
+      // URL bereinigen ohne Navigation
+      this.router.navigate([], { queryParams: {}, replaceUrl: true });
+    }
+  }
+
+  closeModal(): void { this.showSuccessModal.set(false); }
 
   async openPortal(): Promise<void> {
     await this.billing.openCustomerPortal();

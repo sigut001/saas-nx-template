@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { authGuard, adminGuard } from '@saas-base/firebase-auth';
+import { planGuard } from '@saas-base/billing';
 import { SAAS_CONFIG } from './saas.config';
 import { onboardingGuard } from './core/guards/onboarding.guard';
 
@@ -89,6 +90,15 @@ export const appRoutes: Routes = [
         loadComponent: () =>
           import('./features/organization/organization.component').then((m) => m.OrganizationComponent),
       }] as Routes : []),
+      // Test-Route für Guard-Tests (immer aktiv)
+      {
+        path: 'pro-feature',
+        title: 'Pro Feature Test',
+        canActivate: [planGuard('pro')],
+        loadComponent: () =>
+          import('./features/pro-feature-test/pro-feature-test.component').then(
+            (m) => m.ProFeatureTestComponent),
+      },
     ],
   },
 
