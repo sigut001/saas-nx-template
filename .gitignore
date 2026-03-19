@@ -21,3 +21,19 @@ apps/web/src/environments/environment.prod.ts
 firebase-service-account.json
 apps/web/src/environments/environment.ts
 apps/web/src/environments/environment.prod.ts
+
+# Cloud Functions Secrets
+functions/.env
+functions/.env*.local
+
+# Build-Ausgaben
+dist/
+.nx/cache/
+.nx/workspace-data/
+
+# Firebase Debug Logs
+firebase-debug.log
+firestore-debug.log
+database-debug.log
+pubsub-debug.log
+ui-debug.log

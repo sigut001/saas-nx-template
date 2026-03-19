@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["apps/web/src/app/features/not-found/not-found.component.ts"],
-  "sourcesContent": ["import { Component } from '@angular/core';\n\n@Component({ selector: 'app-not-found', standalone: true, template: `\n  <div style=\"text-align:center; padding: 4rem;\">\n    <h1 style=\"font-size: 6rem; margin: 0; opacity: 0.2;\">404</h1>\n    <h2>Seite nicht gefunden</h2>\n    <a routerLink=\"/app/dashboard\">Zurück zum Dashboard</a>\n  </div>\n` })\nexport class NotFoundComponent {}\n"],
-  "mappings": ";;;;;;;;;;;AASM,IAAO,oBAAP,MAAO,mBAAiB;;qCAAjB,oBAAiB;EAAA;yEAAjB,oBAAiB,WAAA,CAAA,CAAA,eAAA,CAAA,GAAA,OAAA,GAAA,MAAA,GAAA,QAAA,CAAA,CAAA,GAAA,cAAA,UAAA,WAAA,MAAA,GAAA,CAAA,GAAA,aAAA,QAAA,UAAA,KAAA,WAAA,KAAA,GAAA,CAAA,cAAA,gBAAA,CAAA,GAAA,UAAA,SAAA,2BAAA,IAAA,KAAA;AAAA,QAAA,KAAA,GAAA;AAN5B,MAAA,yBAAA,GAAA,OAAA,CAAA,EAA+C,GAAA,MAAA,CAAA;AACS,MAAA,iBAAA,GAAA,KAAA;AAAG,MAAA,uBAAA;AACzD,MAAA,yBAAA,GAAA,IAAA;AAAI,MAAA,iBAAA,GAAA,sBAAA;AAAoB,MAAA,uBAAA;AACxB,MAAA,yBAAA,GAAA,KAAA,CAAA;AAA+B,MAAA,iBAAA,GAAA,yBAAA;AAAoB,MAAA,uBAAA,EAAI;;;;;sEAG9C,mBAAiB,CAAA;UAP7B;WAAU,EAAE,UAAU,iBAAiB,YAAY,MAAM,UAAU;;;;;;EAMnE,CAAE;;;;6EACU,mBAAiB,EAAA,WAAA,qBAAA,UAAA,8DAAA,YAAA,GAAA,CAAA;AAAA,GAAA;",
-  "names": []
-}

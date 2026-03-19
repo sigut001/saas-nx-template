@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["angular:styles/component:css;d6764d36e43aaccf65c8561f1de4e95bea60b7dae4967db3f573911b4d8485c9;C:/Users/Simon/Desktop/web-entwicklung/submodules/saas-nx-template/libs/billing/src/lib/components/plan-badge/plan-badge.component.ts"],
-  "sourcesContent": ["\n    .plan-badge {\n      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em;\n      text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 99px;\n    }\n    .plan-badge.free       { background: rgba(139,140,168,0.15); color: #8b8ca8; }\n    .plan-badge.pro        { background: rgba(108,71,255,0.2);   color: #a78bfa; }\n    .plan-badge.enterprise { background: rgba(234,179,8,0.15);   color: #eab308; }\n  "],
-  "mappings": ";AACI,CAAC;AACC,aAAW;AAAQ,eAAa;AAAK,kBAAgB;AACrD,kBAAgB;AAAW,WAAS,OAAO;AAAQ,iBAAe;AACpE;AACA,CAJC,UAIU,CAAC;AAAa,cAAY,KAAK,GAAG,EAAC,GAAG,EAAC,GAAG,EAAC;AAAO,SAAO;AAAS;AAC7E,CALC,UAKU,CAAC;AAAa,cAAY,KAAK,GAAG,EAAC,EAAE,EAAC,GAAG,EAAC;AAAQ,SAAO;AAAS;AAC7E,CANC,UAMU,CAAC;AAAa,cAAY,KAAK,GAAG,EAAC,GAAG,EAAC,CAAC,EAAC;AAAS,SAAO;AAAS;",
-  "names": []
-}

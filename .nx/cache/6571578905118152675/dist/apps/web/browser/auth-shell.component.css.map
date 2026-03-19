@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["angular:styles/component:css;4041ce772dc9e451a074ef21a04f9a3c9b802e7b83c322ad7eff3afcf14727ae;C:/Users/Simon/Desktop/web-entwicklung/submodules/saas-nx-template/apps/web/src/app/shell/auth-shell/auth-shell.component.ts"],
-  "sourcesContent": ["\n    .auth-shell { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #0f0f1a; }\n    .auth-card { background: #1a1a2e; border-radius: 12px; padding: 2.5rem; width: 100%; max-width: 420px; box-shadow: 0 8px 32px rgba(0,0,0,0.4); }\n  "],
-  "mappings": ";AACI,CAAC;AAAa,WAAS;AAAM,eAAa;AAAQ,mBAAiB;AAAQ,cAAY;AAAO,cAAY;AAAS;AACnH,CAAC;AAAY,cAAY;AAAS,iBAAe;AAAM,WAAS;AAAQ,SAAO;AAAM,aAAW;AAAO,cAAY,EAAE,IAAI,KAAK,KAAK,CAAC,EAAC,CAAC,EAAC,CAAC,EAAC;AAAM;",
-  "names": []
-}

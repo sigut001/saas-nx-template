@@ -29,7 +29,7 @@ export const appRoutes: Routes = [
       import('@saas-base/firebase-auth').then((m) => m.ForgotPasswordComponent),
   }] as Routes : []),
 
-  // ─── Onboarding (nur wenn multiOrganization: true) ──────────────────────
+  // ─── Onboarding (nur wenn multiOrganization: true) ────────────────────────
   ...(f.multiOrganization ? [{
     path: 'onboarding',
     canActivate: [authGuard],
@@ -37,6 +37,13 @@ export const appRoutes: Routes = [
       import('./features/onboarding/onboarding.component').then((m) => m.OnboardingComponent),
   }] as Routes : []),
 
+  // ─── Pricing (nur wenn billing: true) ──────────────────────────────────────
+  ...(f.billing ? [{
+    path: 'pricing',
+    title: 'Pricing',
+    loadComponent: () =>
+      import('@saas-base/billing').then((m) => m.PricingComponent),
+  }] as Routes : []),
   // ─── Root ───────────────────────────────────────────────────────────────
   {
     path: '',
@@ -74,7 +81,7 @@ export const appRoutes: Routes = [
         path: 'billing',
         title: 'Billing',
         loadComponent: () =>
-          import('./features/billing/billing.component').then((m) => m.BillingComponent),
+          import('@saas-base/billing').then((m) => m.BillingComponent),
       }] as Routes : []),
       ...(f.multiOrganization ? [{
         path: 'organization',

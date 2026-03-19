@@ -20,6 +20,9 @@
     "paths": {
       "@saas-base/firebase-auth": [
         "libs/firebase-auth/src/index.ts"
+      ],
+      "@saas-base/billing": [
+        "libs/billing/src/index.ts"
       ]
     }
   },
