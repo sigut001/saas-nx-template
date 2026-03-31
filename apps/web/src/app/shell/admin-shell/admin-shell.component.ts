@@ -1,34 +1,158 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject, signal } from '@angular/core';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { CommonModule } from '@angular/common';
+import { AuthService } from '@saas-base/firebase-auth';
 
 @Component({
   selector: 'admin-shell',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    RouterLink,
+    NzLayoutModule,
+    NzMenuModule,
+    NzIconModule,
+    NzAvatarModule,
+    NzDropDownModule
+  ],
   template: `
-    <div class="admin-shell">
-      <aside class="admin-sidebar">
-        <div class="admin-logo">⚙️ Admin</div>
-        <nav>
-          <a routerLink="/admin/users">Users</a>
-          <a routerLink="/admin/organizations">Organizations</a>
-          <a routerLink="/admin/flags">Feature Flags</a>
-          <a routerLink="/admin/stats">Stats</a>
-        </nav>
-      </aside>
-      <main class="admin-content">
-        <router-outlet />
-      </main>
-    </div>
+    <nz-layout class="admin-layout">
+      <nz-sider
+        class="admin-sidebar"
+        nzCollapsible
+        [(nzCollapsed)]="isCollapsed"
+        [nzWidth]="240"
+        [nzTrigger]="null"
+      >
+        <div class="admin-logo">
+          <span nz-icon nzType="setting" [nzSpin]="true"></span>
+          <span *ngIf="!isCollapsed()">Admin Panel</span>
+        </div>
+        <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed()">
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/admin/users">
+              <span nz-icon nzType="team"></span>
+              <span>Users</span>
+            </a>
+          </li>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/admin/organizations">
+              <span nz-icon nzType="global"></span>
+              <span>Organizations</span>
+            </a>
+          </li>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/admin/flags">
+              <span nz-icon nzType="flag"></span>
+              <span>Feature Flags</span>
+            </a>
+          </li>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/admin/stats">
+              <span nz-icon nzType="line-chart"></span>
+              <span>System Stats</span>
+            </a>
+          </li>
+          <li nz-menu-divider></li>
+          <li nz-menu-item>
+            <a routerLink="/app/dashboard">
+              <span nz-icon nzType="arrow-left"></span>
+              <span>Back to App</span>
+            </a>
+          </li>
+        </ul>
+      </nz-sider>
+      
+      <nz-layout>
+        <nz-header>
+          <div class="admin-header">
+            <span class="header-trigger" (click)="toggleCollapsed()">
+              <span nz-icon [nzType]="isCollapsed() ? 'menu-unfold' : 'menu-fold'"></span>
+            </span>
+            
+            <div class="header-right">
+              <button nz-button nzType="text" (click)="logout()">
+                <span nz-icon nzType="logout"></span>
+                Logout
+              </button>
+            </div>
+          </div>
+        </nz-header>
+        
+        <nz-content>
+          <div class="admin-inner-content">
+            <router-outlet></router-outlet>
+          </div>
+        </nz-content>
+      </nz-layout>
+    </nz-layout>
   `,
   styles: [`
-    .admin-shell { display: flex; height: 100vh; }
-    .admin-sidebar { width: 220px; background: #1a0a2e; color: #fff; padding: 1rem; flex-shrink: 0; }
-    .admin-logo { font-size: 1.1rem; font-weight: bold; padding: 1rem 0; border-bottom: 1px solid #400; margin-bottom: 1rem; }
-    .admin-sidebar nav { display: flex; flex-direction: column; gap: 0.5rem; }
-    .admin-sidebar a { color: #ffaaaa; text-decoration: none; padding: 0.5rem; border-radius: 4px; }
-    .admin-sidebar a:hover { background: #400; }
-    .admin-content { flex: 1; padding: 2rem; background: #0f0a1a; color: #e0d0e0; overflow-y: auto; }
+    .admin-layout { height: 100vh; }
+    
+    .admin-sidebar {
+      background: #001529;
+      box-shadow: 2px 0 6px rgba(0, 21, 41, 0.35);
+    }
+
+    .admin-logo {
+      height: 64px;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 600;
+      background: #002140;
+    }
+
+    .admin-header {
+      background: #fff;
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 64px;
+      box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+    }
+
+    .header-trigger {
+      height: 64px;
+      padding: 0 24px;
+      font-size: 18px;
+      line-height: 64px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .header-trigger:hover { background: rgba(0, 0, 0, 0.025); }
+
+    .header-right { padding-right: 24px; }
+
+    .admin-inner-content {
+      padding: 24px;
+      min-height: calc(100vh - 64px);
+      background: #f0f2f5;
+    }
   `]
 })
-export class AdminShellComponent {}
+export class AdminShellComponent {
+  isCollapsed = signal(false);
+
+  private readonly auth = inject(AuthService);
+
+  toggleCollapsed(): void {
+    this.isCollapsed.update(val => !val);
+  }
+
+  async logout(): Promise<void> {
+    await this.auth.logout();
+  }
+}

@@ -4,117 +4,116 @@ import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { AuthService } from '../../auth.service';
 
+// NG-ZORRO Imports
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+
 @Component({
   selector: 'lib-forgot-password',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, RouterLink],
+  imports: [
+    CommonModule, 
+    ReactiveFormsModule, 
+    RouterLink,
+    NzFormModule,
+    NzInputModule,
+    NzButtonModule,
+    NzAlertModule,
+    NzIconModule
+  ],
   template: `
-    <div class="auth-container">
-      <div class="auth-header">
-        <h1 class="auth-title">Passwort zurücksetzen</h1>
-        <p class="auth-subtitle">
-          Gib deine E-Mail ein – wir senden dir einen Reset-Link.
-        </p>
+    <div class="forgot-password-wrapper">
+      <div class="forgot-password-header">
+        <h2>Passwort zurücksetzen</h2>
+        <p>Gib deine E-Mail ein – wir senden dir einen Reset-Link.</p>
       </div>
 
-      @if (successMessage()) {
-        <div class="auth-success" role="status">
-          <span>✉</span> {{ successMessage() }}
-        </div>
-        <a routerLink="/login" class="btn btn--secondary">Zurück zum Login</a>
-      } @else {
+      <nz-alert
+        *ngIf="successMessage()"
+        nzType="success"
+        [nzMessage]="successMessage()"
+        nzShowIcon
+        class="auth-alert"
+      ></nz-alert>
 
-        @if (errorMessage()) {
-          <div class="auth-error" role="alert">
-            <span>⚠</span> {{ errorMessage() }}
-          </div>
-        }
+      <nz-alert
+        *ngIf="errorMessage()"
+        nzType="error"
+        [nzMessage]="errorMessage()"
+        nzShowIcon
+        class="auth-alert"
+      ></nz-alert>
 
-        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="auth-form" novalidate>
-          <div class="form-field">
-            <label class="form-label" for="email">E-Mail</label>
-            <input
-              id="email"
-              type="email"
-              formControlName="email"
-              class="form-input"
-              [class.form-input--error]="isFieldInvalid('email')"
-              placeholder="name@beispiel.de"
-              autocomplete="email"
-            />
-            @if (isFieldInvalid('email')) {
-              <span class="form-error-text">Bitte eine gültige E-Mail eingeben</span>
-            }
-          </div>
+      <div *ngIf="successMessage()" class="success-actions">
+        <button nz-button nzType="default" nzBlock routerLink="/login">
+          Zurück zum Login
+        </button>
+      </div>
 
-          <button type="submit" class="btn btn--primary" [disabled]="isLoading()">
-            @if (isLoading()) {
-              <span class="btn-spinner"></span>Senden…
-            } @else {
-              Reset-Link senden
-            }
-          </button>
-        </form>
+      <form *ngIf="!successMessage()" nz-form [formGroup]="form" (ngSubmit)="onSubmit()" nzLayout="vertical">
+        <nz-form-item>
+          <nz-form-label nzRequired nzFor="email">E-Mail</nz-form-label>
+          <nz-form-control [nzErrorTip]="emailErrorTpl">
+            <nz-input-group nzPrefixIcon="mail">
+              <input type="email" nz-input formControlName="email" placeholder="name@beispiel.de" />
+            </nz-input-group>
+            <ng-template #emailErrorTpl let-control>
+              <ng-container *ngIf="control.hasError('email')">Bitte eine gültige E-Mail eingeben</ng-container>
+              <ng-container *ngIf="control.hasError('required')">E-Mail ist erforderlich</ng-container>
+            </ng-template>
+          </nz-form-control>
+        </nz-form-item>
 
-        @if (showLoginLink) {
-          <p class="auth-footer-text">
-            <a routerLink="/login" class="auth-link">← Zurück zum Login</a>
-          </p>
-        }
-      }
+        <button
+          nz-button
+          nzType="primary"
+          nzBlock
+          [nzLoading]="isLoading()"
+          class="reset-button"
+        >
+          Reset-Link senden
+        </button>
+      </form>
+
+      <div class="auth-footer" *ngIf="showLoginLink && !successMessage()">
+        <a routerLink="/login">← Zurück zum Login</a>
+      </div>
     </div>
   `,
   styles: [`
-    .auth-container { display: flex; flex-direction: column; gap: 1.25rem; }
-    .auth-header { text-align: center; }
-    .auth-title { font-size: 1.5rem; font-weight: 700; color: #e8e8f0; margin: 0 0 0.25rem; }
-    .auth-subtitle { font-size: 0.875rem; color: #8b8ca8; margin: 0; }
-
-    .auth-error {
-      display: flex; align-items: center; gap: 0.5rem;
-      background: rgba(239,68,68,0.12); border: 1px solid rgba(239,68,68,0.3);
-      color: #fca5a5; border-radius: 8px; padding: 0.75rem 1rem; font-size: 0.875rem;
+    .forgot-password-header {
+      text-align: center;
+      margin-bottom: 24px;
     }
-    .auth-success {
-      display: flex; align-items: center; gap: 0.5rem;
-      background: rgba(34,197,94,0.12); border: 1px solid rgba(34,197,94,0.3);
-      color: #86efac; border-radius: 8px; padding: 0.75rem 1rem; font-size: 0.875rem;
+    .forgot-password-header h2 {
+      margin-bottom: 8px;
+      font-weight: 600;
     }
-    .auth-form { display: flex; flex-direction: column; gap: 1rem; }
-    .form-field { display: flex; flex-direction: column; gap: 0.375rem; }
-    .form-label { font-size: 0.875rem; font-weight: 500; color: #c4c4d4; }
-    .form-input {
-      width: 100%; padding: 0.625rem 0.875rem; background: #0f0f1a;
-      border: 1px solid #2d2d4e; border-radius: 8px; color: #e8e8f0;
-      font-size: 0.9375rem; transition: border-color 0.15s, box-shadow 0.15s;
-      box-sizing: border-box;
+    .forgot-password-header p {
+      color: var(--text-secondary);
     }
-    .form-input:focus { outline: none; border-color: #6c47ff; box-shadow: 0 0 0 3px rgba(108,71,255,0.2); }
-    .form-input::placeholder { color: #4a4a6a; }
-    .form-input--error { border-color: #ef4444; }
-    .form-error-text { font-size: 0.8rem; color: #fca5a5; }
-    .btn {
-      display: flex; align-items: center; justify-content: center; gap: 0.5rem;
-      padding: 0.7rem 1rem; border-radius: 8px; font-size: 0.9375rem;
-      font-weight: 600; border: none; cursor: pointer;
-      transition: opacity 0.15s, transform 0.1s; width: 100%;
+    .auth-alert {
+      margin-bottom: 24px;
     }
-    .btn:disabled { opacity: 0.55; cursor: not-allowed; }
-    .btn:not(:disabled):hover { opacity: 0.9; }
-    .btn--primary { background: #6c47ff; color: #fff; }
-    .btn--secondary {
-      background: transparent; color: #6c47ff;
-      border: 1px solid #6c47ff; text-decoration: none;
+    .reset-button {
+      height: 40px;
+      font-size: 15px;
+      font-weight: 500;
     }
-    .btn-spinner {
-      width: 16px; height: 16px; border: 2px solid rgba(255,255,255,0.3);
-      border-top-color: #fff; border-radius: 50%;
-      animation: spin 0.7s linear infinite;
+    .success-actions {
+      margin-top: 16px;
     }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    .auth-footer-text { text-align: center; font-size: 0.875rem; color: #8b8ca8; margin: 0; }
-    .auth-link { color: #6c47ff; text-decoration: none; font-weight: 500; }
-    .auth-link:hover { text-decoration: underline; }
+    .auth-footer {
+      text-align: center;
+      margin-top: 24px;
+      color: var(--text-secondary);
+    }
+    .auth-footer a {
+      font-weight: 500;
+    }
   `]
 })
 export class ForgotPasswordComponent {
@@ -130,11 +129,6 @@ export class ForgotPasswordComponent {
   readonly form = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
   });
-
-  isFieldInvalid(field: string): boolean {
-    const control = this.form.get(field);
-    return !!(control?.invalid && control?.touched);
-  }
 
   async onSubmit(): Promise<void> {
     if (this.form.invalid) {
