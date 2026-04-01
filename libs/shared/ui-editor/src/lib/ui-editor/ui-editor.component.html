@@ -1,0 +1,106 @@
+<div class="editor-container" [class.disabled]="isDisabled">
+  <!-- Bubble Menu für Textformatierung -->
+  <tiptap-bubble-menu [editor]="editor" *ngIf="editor">
+    <div class="bubble-menu-content">
+      <nz-space nzSize="small">
+        <button *nzSpaceItem nz-button nzType="text" nz-tooltip="Fett" nzTooltipPlacement="top"
+                (click)="toggleBold()" [nzDanger]="editor.isActive('bold')" [class.is-active]="editor.isActive('bold')">
+          <span nz-icon nzType="bold"></span>
+        </button>
+        <button *nzSpaceItem nz-button nzType="text" nz-tooltip="Kursiv" nzTooltipPlacement="top"
+                (click)="toggleItalic()" [nzDanger]="editor.isActive('italic')" [class.is-active]="editor.isActive('italic')">
+          <span nz-icon nzType="italic"></span>
+        </button>
+        <button *nzSpaceItem nz-button nzType="text" nz-tooltip="Durchgestrichen" nzTooltipPlacement="top"
+                (click)="toggleStrike()" [nzDanger]="editor.isActive('strike')" [class.is-active]="editor.isActive('strike')">
+          <span nz-icon nzType="strikethrough"></span>
+        </button>
+        <button *nzSpaceItem nz-button nzType="text" nz-tooltip="Unterstrichen" nzTooltipPlacement="top"
+                (click)="toggleUnderline()" [nzDanger]="editor.isActive('underline')" [class.is-active]="editor.isActive('underline')">
+          <span nz-icon nzType="underline"></span>
+        </button>
+      </nz-space>
+    </div>
+  </tiptap-bubble-menu>
+
+  <!-- Statische Toolbar -->
+  <div class="editor-toolbar" *ngIf="editor">
+    <nz-space nzSize="small" nzAlign="center">
+      <!-- Headlines -->
+      <button *nzSpaceItem nz-button nzType="text" nz-tooltip="Überschrift 1"
+              (click)="setHeading(1)" [class.is-active]="editor.isActive('heading', { level: 1 })">
+        <strong>H1</strong>
+      </button>
+      <button *nzSpaceItem nz-button nzType="text" nz-tooltip="Überschrift 2"
+              (click)="setHeading(2)" [class.is-active]="editor.isActive('heading', { level: 2 })">
+        <strong>H2</strong>
+      </button>
+      <button *nzSpaceItem nz-button nzType="text" nz-tooltip="Überschrift 3"
+              (click)="setHeading(3)" [class.is-active]="editor.isActive('heading', { level: 3 })">
+        <strong>H3</strong>
+      </button>
+
+      <nz-divider *nzSpaceItem nzType="vertical"></nz-divider>
+
+      <!-- Formatting -->
+      <button *nzSpaceItem nz-button nzType="text" nz-tooltip="Fett"
+              (click)="toggleBold()" [class.is-active]="editor.isActive('bold')">
+        <span nz-icon nzType="bold"></span>
+      </button>
+      <button *nzSpaceItem nz-button nzType="text" nz-tooltip="Kursiv"
+              (click)="toggleItalic()" [class.is-active]="editor.isActive('italic')">
+        <span nz-icon nzType="italic"></span>
+      </button>
+      <button *nzSpaceItem nz-button nzType="text" nz-tooltip="Durchgestrichen"
+              (click)="toggleStrike()" [class.is-active]="editor.isActive('strike')">
+        <span nz-icon nzType="strikethrough"></span>
+      </button>
+
+      <nz-divider *nzSpaceItem nzType="vertical"></nz-divider>
+
+      <!-- Lists -->
+      <button *nzSpaceItem nz-button nzType="text" nz-tooltip="Aufzählung"
+              (click)="toggleBulletList()" [class.is-active]="editor.isActive('bulletList')">
+        <span nz-icon nzType="unordered-list"></span>
+      </button>
+      <button *nzSpaceItem nz-button nzType="text" nz-tooltip="Nummerierte Liste"
+              (click)="toggleOrderedList()" [class.is-active]="editor.isActive('orderedList')">
+        <span nz-icon nzType="ordered-list"></span>
+      </button>
+
+      <nz-divider *nzSpaceItem nzType="vertical"></nz-divider>
+
+      <!-- Media -->
+      <button *nzSpaceItem nz-button nzType="text" nz-tooltip="Bild einfügen"
+              (click)="openImageModal()">
+        <span nz-icon nzType="picture"></span>
+      </button>
+      <button *nzSpaceItem nz-button nzType="text" nz-tooltip="YouTube Video"
+              (click)="openYoutubeModal()">
+        <span nz-icon nzType="youtube"></span>
+      </button>
+      <button *nzSpaceItem nz-button nzType="text" nz-tooltip="Tabelle"
+              (click)="insertTable()" [class.is-active]="editor.isActive('table')">
+        <span nz-icon nzType="table"></span>
+      </button>
+    </nz-space>
+  </div>
+
+  <!-- Editor Section -->
+  <div class="editor-content">
+    <tiptap-editor [editor]="editor" [(ngModel)]="value"></tiptap-editor>
+  </div>
+</div>
+
+<!-- Modals for Media -->
+<nz-modal [(nzVisible)]="isImageModalVisible" nzTitle="Bild via URL einfügen" (nzOnCancel)="isImageModalVisible = false" (nzOnOk)="handleImageOk()">
+  <ng-container *nzModalContent>
+    <input nz-input placeholder="https://..." [(ngModel)]="mediaUrlInput" (keydown.enter)="handleImageOk()" />
+  </ng-container>
+</nz-modal>
+
+<nz-modal [(nzVisible)]="isYoutubeModalVisible" nzTitle="YouTube Video einfügen" (nzOnCancel)="isYoutubeModalVisible = false" (nzOnOk)="handleYoutubeOk()">
+  <ng-container *nzModalContent>
+    <input nz-input placeholder="https://youtube.com/watch?v=..." [(ngModel)]="mediaUrlInput" (keydown.enter)="handleYoutubeOk()" />
+  </ng-container>
+</nz-modal>

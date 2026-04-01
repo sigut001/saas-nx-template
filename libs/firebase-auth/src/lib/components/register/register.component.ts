@@ -8,7 +8,7 @@ import {
   ValidationErrors,
 } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { AuthService } from '../../auth.service';
+import { AuthService } from '@saas-base/auth-core';
 
 // NG-ZORRO Imports
 import { NzFormModule } from 'ng-zorro-antd/form';

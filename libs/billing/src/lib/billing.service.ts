@@ -5,7 +5,6 @@ import { loadStripe, Stripe } from '@stripe/stripe-js';
 import {
   BILLING_CONFIG,
   BILLING_FEATURES,
-  BillingFeatures,
   PlanDefinition,
 } from './billing.config';
 

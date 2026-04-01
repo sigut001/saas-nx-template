@@ -74,7 +74,7 @@ export class UpgradeDialogComponent {
     return labelMap[this.featureKey()] ?? this.featureKey();
   };
 
-  open(key?: string): void {
+  open(): void {
     this.isOpen.set(true);
   }
 

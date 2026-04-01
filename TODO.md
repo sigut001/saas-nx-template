@@ -148,28 +148,26 @@
 
 ---
 
-## Phase 7: Feature-Generator Schematic 🔴 (noch nicht begonnen)
+## Phase 7: Feature-Generator Schematic ✅ (abgeschlossen)
 
 ```bash
-# Ziel: Ein vollständiges Feature-Modul in Sekunden generieren
-npx nx generate @saas-base/schematics:feature --name=projects --icon=folder --plan=basic
+# Ziel: Ein vollständiges SaaS-Webentwicklung-Modul in Sekunden generieren
+npx nx g ./tools/saas-generators:saas-feature name --directory=features/web-entwicklung
 ```
 
-- [ ] NX Plugin in `libs/schematics/` aufsetzen
-- [ ] Dateivorlagen (`.template`) für: Component, Service, Routes, Model, NavItem
-- [ ] Schema: `--name`, `--icon`, `--plan`, `--collection`, `--detail`
-- [ ] AST: Route zu `app.routes.ts` hinzufügen
-- [ ] AST: Nav-Eintrag zu `nav.config.ts` hinzufügen
-- [ ] AST: Firestore-Rule hinzufügen
+- [x] Lokales NX Plugin in `tools/saas-generators` aufgesetzt
+- [x] Generator-Skript nutzt `@nx/angular:library` unter der Haube (Standalone, Routing, SCSS)
+- [x] Automatische Erstellung einer deklarativen `manifest.ts` zur Shell-Anbindung
+- [x] Generator automatisiert Export-Listen in der Bibliothek (`index.ts`)
 
 ---
 
-## 🎯 Nächster konkreter Schritt
+## 🎯 Nächster konkreter Schritt: Analytics & Documents Module
 
-**Phase 3 – Cloud Functions aufsetzen:**
+**Phase 8 – Web-Entwicklungs-Portal weiter ausbauen:**
 
-1. `functions/` Ordner anlegen + Firebase CLI konfigurieren
-2. `onUserCreated` schreiben → Firestore `users/{uid}` anlegen
-3. Onboarding-Flow implementieren (Org erstellen nach Registrierung)
-
-> Danach wird aus unserem Auth-Modul ein vollständiges Multi-Tenant SaaS-System.
+1. **Analytics Modul (`libs/features/web-entwicklung/analytics`) mit Leben füllen**
+   - KPI-Charts, Besucherstatistiken, Traffic-Kurven.
+2. **Documents Modul (`libs/features/web-entwicklung/documents`) mit Leben füllen**
+   - Dokumentverwaltung, Formulare, Upload-Masken.
+3. Content Management System (CMS) abschließen und mit den restlichen App-Logiken verknüpfen.

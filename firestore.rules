@@ -59,6 +59,12 @@ service cloud.firestore {
 
       // Löschen: nur Super-Admin
       allow delete: if isSuperAdmin();
+
+      // ── private/{document=**} (Tresor) ──────────────────────────────────────
+      match /private/{document=**} {
+        // Gänzlich gesperrt (nur für Cloud Functions im Admin-Modus lesbar)
+        allow read, write: if false;
+      }
     }
 
 

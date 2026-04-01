@@ -1,0 +1,50 @@
+﻿Variable declaration expected.[0m 
+[1m[35m[plugin angular-compiler][0m[39m[22m
+[1m[31m[39m[22m
+[1m[31m    libs/features/blog-editor/src/lib/b
+log-editor/blog-editor.component.ts:115:29:[39m
+[22m
+[1m[31m[37m      115 Ôöé       const 
+tenantAppName = \[32m`tenant-\${targetFirebase.
+projectId}\`;[37m[39m[22m
+[1m[31m          ÔòÁ                          
+    [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[0m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31mX 
+[41;31m[[41;97mERROR[41;31m][0m [1mTS1005: 
+'}' expected.[0m [1m[35m[plugin 
+angular-compiler][0m[39m[22m
+[1m[31m[39m[22m
+[1m[31m    libs/features/blog-editor/src/lib/b
+log-editor[39m[22m
+[1m[31m/blog-editor.component.ts:141:0:[39m[
+22m
+[1m[31m[37m      141 Ôöé [32m[37m[39m[22m
+[1m[31m          ÔòÁ [32m^[0m[39m[22m
+[1m[31m[39m[22m
+[1m[31m  The parser expected to find a '}' to 
+match the '{' token here.[39m[22m
+[1m[31m[39m[22m
+[1m[31m    libs/features/blog-editor/src/lib/b
+log-editor/blog-editor.component.ts:103:8:[39m
+[22m
+[1m[31m[37m      103 Ôöé     try 
+[32m{[37m[39m[22m
+[1m[31m          ÔòÁ         
+[32m^[0m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31mX 
+[41;31m[[41;97mERROR[41;31m][0m [1mTS1160: 
+Unterminated template literal.[0m 
+[1m[35m[plugin angular-compiler][0m[39m[22m
+[1m[31m[39m[22m
+[1m[31m    libs/features/blog-editor/src/lib/b
+log-editor/blog-editor.component.ts:141:0:[39m
+[22m
+[1m[31m[37m      141 Ôöé [32m[37m[39m[22m
+[1m[31m          ÔòÁ [32m^[0m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m

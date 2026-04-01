@@ -10,24 +10,34 @@
     "importHelpers": true,
     "target": "ES2022",
     "module": "ES2022",
-    "lib": [
-      "ES2022",
-      "dom"
-    ],
+    "lib": ["ES2022", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@saas-base/firebase-auth": [
-        "libs/firebase-auth/src/index.ts"
+      "@saas-base/analytics": [
+        "libs/features/web-entwicklung/analytics/src/index.ts"
       ],
-      "@saas-base/billing": [
-        "libs/billing/src/index.ts"
-      ]
+      "@saas-base/auth-core": ["libs/shared/auth-guards/src/index.ts"],
+      "@saas-base/billing": ["libs/billing/src/index.ts"],
+      "@saas-base/blog-editor": ["libs/features/blog-editor/src/index.ts"],
+      "@saas-base/content-management-system": [
+        "libs/features/web-entwicklung/content-management-system/src/index.ts"
+      ],
+      "@saas-base/core-interfaces": [
+        "libs/shared/core-interfaces/src/index.ts"
+      ],
+      "@saas-base/documents": [
+        "libs/features/web-entwicklung/documents/src/index.ts"
+      ],
+      "@saas-base/firebase-auth": ["libs/firebase-auth/src/index.ts"],
+      "@saas-base/generators": ["tools/saas-generators/src/index.ts"],
+      "@saas-base/tenant-integration": [
+        "libs/shared/tenant-integration/src/index.ts"
+      ],
+      "@saas-base/ui-editor": ["libs/shared/ui-editor/src/index.ts"],
+      "@saas-base/ui-shell": ["libs/ui-shell/src/index.ts"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }

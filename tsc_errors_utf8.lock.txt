@@ -1,0 +1,18 @@
+﻿apps/kundenadmin/src/app/app.config.ts(6,37): error TS2307: Cannot find module '@saas-base/auth-core' or its corresponding type declarations.
+apps/kundenadmin/src/app/app.config.ts(9,33): error TS2307: Cannot find module '@saas-base/ui-shell' or its corresponding type declarations.
+apps/kundenadmin/src/app/app.routes.ts(2,39): error TS2307: Cannot find module '@saas-base/auth-core' or its corresponding type declarations.
+apps/kundenadmin/src/app/app.routes.ts(27,33): error TS2307: Cannot find module '@saas-base/ui-shell' or its corresponding type declarations.
+apps/kundenadmin/src/app/app.routes.ts(32,37): error TS2307: Cannot find module '@saas-base/ui-shell' or its corresponding type declarations.
+apps/kundenadmin/src/app/app.routes.ts(38,36): error TS2307: Cannot find module '@saas-base/blog-editor' or its corresponding type declarations.
+apps/kundenadmin/src/app/app.routes.ts(52,33): error TS2307: Cannot find module '@saas-base/ui-shell' or its corresponding type declarations.
+apps/kundenadmin/src/app/app.routes.ts(57,37): error TS2307: Cannot find module '@saas-base/ui-shell' or its corresponding type declarations.
+libs/features/content-management-system/src/lib/content-management-system/content-management-system.component.ts(3,42): error TS2307: Cannot find module '@saas-base/tenant-integration' or its corresponding type declarations.
+libs/features/content-management-system/src/lib/content-management-system/content-management-system.component.ts(121,26): error TS2571: Object is of type 'unknown'.
+libs/features/content-management-system/src/lib/lib.routes.ts(3,41): error TS2307: Cannot find module '@saas-base/tenant-integration' or its corresponding type declarations.
+libs/firebase-auth/src/lib/components/forgot-password/forgot-password.component.ts(5,29): error TS2307: Cannot find module '@saas-base/auth-core' or its corresponding type declarations.
+libs/firebase-auth/src/lib/components/forgot-password/forgot-password.component.ts(141,13): error TS2571: Object is of type 'unknown'.
+libs/firebase-auth/src/lib/components/login/login.component.ts(5,81): error TS2307: Cannot find module '@saas-base/auth-core' or its corresponding type declarations.
+libs/firebase-auth/src/lib/components/login/login.component.ts(182,13): error TS2571: Object is of type 'unknown'.
+libs/firebase-auth/src/lib/components/login/login.component.ts(194,13): error TS2571: Object is of type 'unknown'.
+libs/firebase-auth/src/lib/components/register/register.component.ts(11,29): error TS2307: Cannot find module '@saas-base/auth-core' or its corresponding type declarations.
+libs/firebase-auth/src/lib/components/register/register.component.ts(205,13): error TS2571: Object is of type 'unknown'.

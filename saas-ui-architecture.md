@@ -69,31 +69,23 @@ Das ist der Kern. Alle Business-Logik lebt hier.
 
 ### Shell-Komponenten (immer vorhanden, nie app-spezifisch)
 
-#### 3.1 Sidebar-Navigation
-```
-┌─────────────────┐
-│ [Logo]          │
-├─────────────────┤
-│ ○ Dashboard     │  ← immer vorhanden
-│ ○ [SLOT: Nav]   │  ← app-spezifische Menüpunkte
-│ ○ [SLOT: Nav]   │
-│ ○ [SLOT: Nav]   │
-├─────────────────┤
-│ ○ Account       │  ← immer vorhanden
-│ ○ Settings      │  ← immer vorhanden
-│ ○ Billing       │  ← immer vorhanden
-└─────────────────┘
+#### 3.1 Sidebar-Navigation & Feature-Toggling
+Die Navigation wird nicht manuell gepflegt, sondern leitet sich dynamisch aus der **`saas.config.ts`** ab. Jede SaaS-App injiziert ihre spezifischen Feature-Flags über den `UI_SHELL_CONFIG`-Provider.
+
+```typescript
+// apps/[app-name]/src/app/saas.config.ts
+export const SAAS_CONFIG: SaaSConfig = {
+  appName: 'Mein Kundenadmin',
+  features: {
+    blogEditor: true,    // ← Aktiviert den Block-Editor in Sidebar & Routing
+    billing: false,     // ← Deaktiviert Billing-Links
+    adminPanel: true,
+    // ... weitere Flags
+  }
+};
 ```
 
-Die Navigation wird über eine **Konfigurationsdatei** gesteuert:
-```typescript
-// app.config.ts – wird pro SaaS-App angepasst
-export const NAV_ITEMS: NavItem[] = [
-  // → SLOT: Hier trägt die Business-App ihre Features ein
-  { icon: 'folder', label: 'Projekte', route: '/app/projects', requiredPlan: 'basic' },
-  { icon: 'chart',  label: 'Analytics', route: '/app/analytics', requiredPlan: 'pro' },
-];
-```
+Die Sidebar prüft diese Flags (`*ngIf="config.features.blogEditor"`) und zeigt nur die relevanten "Business-Slots" an.
 
 #### 3.2 Top-Bar
 Immer sichtbar. Enthält:
@@ -177,42 +169,39 @@ Diese Systeme laufen in allen Zonen und sind vollständig generisch:
 
 ---
 
-## 6. Wie wird Business-Logik eingebunden?
+## 6. Wie wird Business-Logik eingebunden? (Feature-Modelle)
 
-### Schritt 1: Feature-Route registrieren
+Es gibt zwei Wege, wie neue Funktionen in eine App integriert werden – je nach Komplexität und Wiederverwendbarkeit:
+
+### Modell A: Generated Features (Struktur-Fokus)
+*   **Was:** Standard-CRUD-Funktionen (z. B. "Projekte", "Aufgaben").
+*   **Wie:** Ein **NX Generator (Schematic)** erzeugt den Code direkt in der App.
+*   **Warum:** Hohe Anpassbarkeit. Der Entwickler erhält ein fertiges Skelett und baut die spezifische Logik darin aus.
+
+### Modell B: Integrated Features (Logik-Fokus)
+*   **Was:** Hochkomplexe, fertige Module (z. B. "Block-Editor", "Auth-Pages").
+*   **Wie:** Die Logik lebt in einer **Shared Library** (`libs/`). In der App wird lediglich das Feature-Flag in der `saas.config.ts` aktiviert und die Route in der `app.routes.ts` verknüpft.
+*   **Warum:** Konsistenz über alle SaaS-Produkte hinweg. Updates an der Library verbessern sofort alle Apps.
+
+### Beispiel: Hybride Integration in `app.routes.ts`
 ```typescript
-// apps/web/src/app/app.routes.ts
-{
-  path: 'app',
-  component: AppShellComponent,  // ← Sidebar + Topbar
-  children: [
-    { path: 'dashboard', loadComponent: () => import('./features/dashboard/...')},
-    // → HIER trägt die Business-App ihre Feature-Routen ein:
-    { path: 'projects', loadChildren: () => import('@saas-app/projects').then(m => m.routes) },
-    { path: 'invoices', loadChildren: () => import('@saas-app/invoices').then(m => m.routes) },
-  ]
-}
+export const appRoutes: Routes = [
+  {
+    path: 'app',
+    component: AppShellComponent,
+    children: [
+      // 1. Lokales (generiertes) Feature
+      { path: 'projects', loadChildren: () => import('./features/projects/...') },
+      
+      // 2. Globales (integriertes) Library-Feature
+      ...(f.blogEditor ? [{
+        path: 'blog',
+        loadChildren: () => import('@saas-base/blog-editor').then(m => m.routes),
+      }] : []),
+    ]
+  }
+];
 ```
-
-### Schritt 2: Nav-Eintrag hinzufügen
-```typescript
-// app.config.ts
-NAV_ITEMS: [
-  { label: 'Projekte', icon: 'folder', route: '/app/projects' },
-]
-```
-
-### Schritt 3: Dashboard-Widget registrieren (optional)
-```typescript
-// Feature-Modul registriert eigene KPI-Card
-DashboardRegistry.register({
-  id: 'projects-count',
-  component: ProjectsKpiCard,
-  requiredPlan: 'basic'
-});
-```
-
-Das war es. Die Shell weiß nichts von "Projekten" – sie rendert nur was registriert ist.
 
 ---
 
@@ -293,11 +282,17 @@ Dieses Schema funktioniert für: CRM, Projektmanagement, Buchungen, Rechnungen, 
 | **rxjs** | Reaktive Streams | ✅ Pflicht (Angular-Kern) |
 | **uuid** | IDs generieren | ✅ |
 
-### 8.8 Payments
-
+### 8.8 Payments & Billing
 | Paket | Zweck | Empfehlung |
 |---|---|---|
 | **Stripe.js** (`@stripe/stripe-js`) | Stripe Checkout, Customer Portal | ✅ Pflicht |
+
+### 8.9 Content Management (Block Editor)
+| Paket | Zweck | Empfehlung |
+|---|---|---|
+| **Tiptap** (`@tiptap/core`) | Headless Editor Engine | ✅ Beste Wahl für SaaS (MIT-Lizenz) |
+| **ngx-tiptap** | Angular Bindings für Tiptap | ✅ Ab v12 (Signals-Support) |
+| **ProseMirror** (`@tiptap/pm`) | Low-Level Engine für Tiptap | ✅ Notwendig für v2+ |
 
 ---
 
@@ -319,14 +314,13 @@ Dieses Schema funktioniert für: CRM, Projektmanagement, Buchungen, Rechnungen, 
 
 ---
 
-## 10. Feature-Generator (Schematic)
+## 10. Feature-Generator (Schematic für Modell A)
 
 ### Konzept
-
-Wenn die SaaS-Base als Template genutzt wird, soll ein NX Generator den Entwickler in Sekunden von 0 auf ein vollständiges Feature bringen – ohne manuelle Datei-Anpassungen.
+Für Standard-Inhalte (Modell A) soll ein NX Generator den Entwickler unterstützen, schnell die Grundstruktur (CRUD) zu erzeugen.
 
 ```bash
-npx nx generate @saas-base/schematics:feature --name=projects --icon=folder --plan=basic
+npx nx generate @saas-base/schematics:feature --name=contacts --icon=user --plan=basic
 ```
 
 ### Was der Generator automatisch erledigt

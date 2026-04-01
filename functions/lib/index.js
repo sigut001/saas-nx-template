@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.health = exports.createPortalSession = exports.createCheckoutSession = exports.stripeWebhook = exports.onUserCreated = void 0;
+exports.getTenantCustomToken = exports.health = exports.createPortalSession = exports.createCheckoutSession = exports.stripeWebhook = exports.onUserCreated = void 0;
+/* eslint-disable @nx/enforce-module-boundaries */
 const admin = require("firebase-admin");
 const v1_1 = require("firebase-functions/v1");
 const https_1 = require("firebase-functions/v2/https");
@@ -59,7 +60,7 @@ exports.onUserCreated = v1_1.auth.user().onCreate(async (user) => {
             onboardedAt: null,
             createdAt: firestore_1.FieldValue.serverTimestamp(),
             updatedAt: firestore_1.FieldValue.serverTimestamp(),
-        });
+        }, { merge: true });
         logger.info(`✅ users/${uid} erfolgreich angelegt (Stripe: ${stripeCustomerId ?? 'nicht konfiguriert'})`);
     }
     catch (error) {
@@ -118,7 +119,7 @@ exports.stripeWebhook = (0, https_1.onRequest)({ region: 'europe-west1' }, async
                     plan: planId,
                     subscriptionStatus: status,
                     subscriptionId: sub.id,
-                    currentPeriodEnd: new Date(sub.current_period_end * 1000),
+                    currentPeriodEnd: new Date((sub.current_period_end) * 1000),
                     updatedAt: firestore_1.FieldValue.serverTimestamp(),
                 });
                 logger.info(`✅ User ${uid}: plan=${planId}, status=${status}`);
@@ -264,6 +265,69 @@ exports.health = (0, https_1.onRequest)({ region: 'europe-west1' }, (req, res) =
         stripe: stripe ? 'konfiguriert' : 'nicht konfiguriert',
     });
 });
+// ─── HTTPS CALLABLE: Tenant Custom Token ─────────────────────────────────────
+/**
+ * Generiert einen Custom Auth Token für den eingeloggten Agency-User,
+ * mit dem er sich im Browser in die Firebase-Datenbank des Kunden einloggen kann.
+ */
+const https_2 = require("firebase-functions/v2/https");
+exports.getTenantCustomToken = (0, https_2.onCall)({ region: 'europe-west1', cors: true }, async (request) => {
+    // 1. Sicherheits-Check: Ist der Agency-Nutzer eingeloggt?
+    if (!request.auth) {
+        throw new https_2.HttpsError('unauthenticated', 'Nur eingeloggte Agency-Nutzer dürfen Tokens anfordern.');
+    }
+    const agencyUid = request.auth.uid;
+    const { targetProjectId } = request.data;
+    if (!targetProjectId) {
+        throw new https_2.HttpsError('invalid-argument', 'Die Ziel-Projekt-ID (targetProjectId) fehlt.');
+    }
+    try {
+        // ECHTE IMPLEMENTIERUNG: Target-Token-Generierung via Tresor-Datenbank
+        // 1. Hole den geheimen Tresor des Nutzers
+        // (Geht nur in Cloud Functions, da Frontend per Security Rules gesperrt ist)
+        const vaultDoc = await admin.firestore()
+            .collection('users')
+            .doc(agencyUid)
+            .collection('private')
+            .doc('secrets')
+            .get();
+        if (!vaultDoc.exists) {
+            throw new https_2.HttpsError('failed-precondition', 'Kein Tresordokument (private/secrets) für diesen User gefunden.');
+        }
+        const vaultData = vaultDoc.data();
+        const targetFirebase = vaultData?.targetFirebase;
+        if (!targetFirebase || !targetFirebase.privateKey || !targetFirebase.clientEmail) {
+            throw new https_2.HttpsError('failed-precondition', 'Private Key oder Client Email fehlt im Tresor.');
+        }
+        const targetPrivateKeyEncoded = targetFirebase.privateKey;
+        const targetClientEmail = targetFirebase.clientEmail;
+        // 2. Temporäre App in der Funktion aufbauen (Das repräsentiert das Kunden-Backend)
+        // Wichtig: Escape-Zeichen \n im Key korrigieren
+        const targetPrivateKey = targetPrivateKeyEncoded.replace(/\\n/g, '\n');
+        const tempAppName = `app-${targetProjectId}-${Date.now()}`;
+        const customerAdminApp = admin.initializeApp({
+            projectId: targetProjectId,
+            credential: admin.credential.cert({
+                projectId: targetProjectId,
+                clientEmail: targetClientEmail,
+                privateKey: targetPrivateKey
+            })
+        }, tempAppName);
+        // 3. Den offiziellen Stempel der Kunden-Website auf den Token drücken
+        const customToken = await customerAdminApp.auth().createCustomToken(agencyUid, {
+            isAgencyAdmin: true,
+            targetTenant: targetProjectId,
+            role: 'owner'
+        });
+        // 4. Memory Leak verhindern: Temporäre App sofort wieder zerstören
+        await customerAdminApp.delete();
+        return { token: customToken };
+    }
+    catch (error) {
+        logger.error(`Fehler beim Generieren des Tenant Tokens für ${targetProjectId}:`, error);
+        throw new https_2.HttpsError('internal', 'Der Token konnte nicht generiert werden.', error);
+    }
+});
 // ─── Hilfsfunktionen ──────────────────────────────────────────────────────────
 /** Findet Firebase UID anhand der Stripe Customer ID */
 async function getUidFromCustomer(customerId) {
@@ -296,7 +360,8 @@ function getPlanFromSubscription(sub) {
     // Plan-Map (muss mit billing.config.ts übereinstimmen)
     // Wird idealerweise aus Stripe Price Metadata gelesen:
     // stripe.prices.update(priceId, { metadata: { planId: 'pro' } })
-    const plan = item.price.metadata?.['planId'];
+    const price = item.price;
+    const plan = price.metadata?.['planId'];
     if (plan)
         return plan;
     // Fallback: nach Preis-ID suchen (wird durch setup.js befüllt)

@@ -1,0 +1,9 @@
+{
+  "generators": {
+    "saas-feature": {
+      "factory": "./src/generators/saas-feature/saas-feature",
+      "schema": "./src/generators/saas-feature/schema.json",
+      "description": "saas-feature generator"
+    }
+  }
+}

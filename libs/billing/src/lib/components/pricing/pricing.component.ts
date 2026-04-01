@@ -1,6 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
 import { BillingService, BillingSchedule } from '../../billing.service';
-import { BILLING_FEATURES, BillingFeatures, PlanDefinition } from '../../billing.config';
+import { BILLING_FEATURES, PlanDefinition } from '../../billing.config';
 
 @Component({
   selector: 'lib-pricing',

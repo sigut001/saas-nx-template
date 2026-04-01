@@ -1,9 +1,8 @@
-import { Component, inject, signal, Input, computed } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { AuthService } from '../../auth.service';
-import { AUTH_FEATURES, AuthFeatures, DEFAULT_AUTH_FEATURES } from '../../auth-module.config';
+import { AuthService, AUTH_FEATURES, AuthFeatures, DEFAULT_AUTH_FEATURES } from '@saas-base/auth-core';
 
 // NG-ZORRO Imports
 import { NzFormModule } from 'ng-zorro-antd/form';
@@ -166,8 +165,8 @@ export class LoginComponent {
   passwordVisible = false;
 
   readonly form = this.fb.group({
-    email: ['', [Validators.required, Validators.email]],
-    password: ['', Validators.required],
+    email: ['testkunde@qubits.de', [Validators.required, Validators.email]],
+    password: ['TestPassword123!', Validators.required],
   });
 
   async onSubmit(): Promise<void> {

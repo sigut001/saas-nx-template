@@ -1,0 +1,158 @@
+/* Editor Container */
+.editor-container {
+  position: relative;
+  background: #ffffff;
+  border-radius: 8px;
+  max-width: 100%;
+}
+
+/* Editor Input Area */
+.editor-content {
+  padding: 16px 24px;
+}
+
+/* Tiptap Default Class */
+.ProseMirror {
+  min-height: 300px;
+  outline: none;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Placeholder Styling */
+.ProseMirror p.is-editor-empty:first-child::before {
+  color: #adb5bd;
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
+/* Typography Base Styles */
+.ProseMirror h1, .ProseMirror h2, .ProseMirror h3 {
+  line-height: 1.2;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
+
+.ProseMirror h1 { font-size: 2em; }
+.ProseMirror h2 { font-size: 1.5em; }
+.ProseMirror h3 { font-size: 1.17em; }
+
+.ProseMirror p {
+  margin-bottom: 1em;
+  margin-top: 0;
+}
+
+/* Lists */
+.ProseMirror ul, .ProseMirror ol {
+  padding: 0 1rem;
+  margin-bottom: 1em;
+}
+
+.ProseMirror ul {
+  list-style-type: disc;
+}
+
+.ProseMirror ol {
+  list-style-type: decimal;
+}
+
+.ProseMirror li p {
+  margin-bottom: 0.25em;
+}
+
+/* Task Lists */
+ul[data-type="taskList"] {
+  list-style: none;
+  padding: 0;
+}
+ul[data-type="taskList"] li {
+  display: flex;
+  align-items: center;
+}
+ul[data-type="taskList"] li > label {
+  flex: 0 0 auto;
+  margin-right: 0.5rem;
+  user-select: none;
+}
+ul[data-type="taskList"] li > div {
+  flex: 1 1 auto;
+}
+
+/* Blockquotes */
+.ProseMirror blockquote {
+  border-left: 3px solid #e5e7eb;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: #6b7280;
+}
+
+/* Images and Videos */
+.ProseMirror img,
+.ProseMirror iframe {
+  max-width: 100%;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+}
+
+/* Tables */
+.ProseMirror table {
+  border-collapse: collapse;
+  margin: 0;
+  overflow: hidden;
+  table-layout: fixed;
+  width: 100%;
+}
+.ProseMirror table td,
+.ProseMirror table th {
+  border: 1px solid #d9d9d9;
+  box-sizing: border-box;
+  min-width: 1em;
+  padding: 6px 8px;
+  position: relative;
+  vertical-align: top;
+}
+.ProseMirror table th {
+  background-color: #fafafa;
+  font-weight: bold;
+  text-align: left;
+}
+
+/* --- Menus (Notion-like) --- */
+.bubble-menu-content {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 4px;
+}
+
+.editor-toolbar {
+  padding: 12px 24px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e8e8e8;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.bubble-menu-content button.is-active,
+.bubble-menu-content button.is-active:hover,
+.editor-toolbar button.is-active,
+.editor-toolbar button.is-active:hover {
+  color: #1890ff !important;
+  background-color: #e6f7ff !important;
+}
+
+.editor-toolbar button {
+  color: #595959;
+}

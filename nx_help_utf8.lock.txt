@@ -1,0 +1,198 @@
+﻿
+ NX   generate @nx/angular:library [directory] [options,...]
+
+
+From:  @nx/angular (v20.6.0)
+Name:  library (aliases: lib)
+
+
+  Creates an Angular library.
+
+
+Options:
+    --directory                  A directory where the                 [string]
+                                 library is placed.
+    --buildable                  Generate a buildable                 [boolean]
+                                 library.
+    --lazy                       Add                                  [boolean]
+                                 `RouterModule.forChild`
+                                 when set to true, and a
+                                 simple array of routes
+                                 when set to false.
+    --name                       The name of the                       [string]
+                                 library.
+    --parent                     Path to the parent                    [string]
+                                 route configuration
+                                 using `loadChildren` or
+                                 `children`, depending
+                                 on what `lazy` is set
+                                 to.
+    --publishable                Generate a publishable               [boolean]
+                                 library.
+    --routing                    Add router                           [boolean]
+                                 configuration. See
+                                 `lazy` for more
+                                 information.
+    --addModuleSpec              Add a module spec file.              [boolean]
+    --addTailwind                Whether to configure                 [boolean]
+                                 Tailwind CSS for the
+                                 application. It can
+                                 only be used with
+                                 buildable and
+                                 publishable libraries.
+                                 Non-buildable libraries
+                                 will use the
+                                 application's Tailwind
+                                 configuration.
+    --changeDetection, -c        The change detection        [string] [choices:
+                                 strategy to use in the    "Default", "OnPush"]
+                                 new component.            [default: "Default"]
+                                 Disclaimer: This option
+                                 is only valid when
+                                 `--standalone` is set
+                                 to `true`.
+    --compilationMode            Specifies the               [string] [choices:
+                                 compilation mode to         "full", "partial"]
+                                 use. If not specified,
+                                 it will default to
+                                 `partial` for
+                                 publishable libraries
+                                 and to `full` for
+                                 buildable libraries.
+                                 The `full` value can
+                                 not be used for
+                                 publishable libraries.
+    --displayBlock, -b           Specifies if the                     [boolean]
+                                 component generated
+                                 style will contain
+                                 `:host { display:
+                                 block; }`. Disclaimer:
+                                 This option is only
+                                 valid when
+                                 `--standalone` is set
+                                 to `true`.
+    --flat                       Ensure the generated                 [boolean]
+                                 standalone component is
+                                 not placed in a
+                                 subdirectory.
+                                 Disclaimer: This option
+                                 is only valid when
+                                 `--standalone` is set
+                                 to `true`.
+    --importPath                 The library name used                 [string]
+                                 to import it, like `@my
+                                 org/my-awesome-lib`.
+                                 Must be a valid npm
+                                 name.
+    --inlineStyle, -s            Include styles inline                [boolean]
+                                 in the component.ts
+                                 file. Only CSS styles
+                                 can be included inline.
+                                 By default, an external
+                                 styles file is created
+                                 and referenced in the
+                                 component.ts file.
+                                 Disclaimer: This option
+                                 is only valid when
+                                 `--standalone` is set
+                                 to `true`.
+    --inlineTemplate, -t         Include template inline              [boolean]
+                                 in the component.ts
+                                 file. By default, an
+                                 external template file
+                                 is created and
+                                 referenced in the
+                                 component.ts file.
+                                 Disclaimer: This option
+                                 is only valid when
+                                 `--standalone` is set
+                                 to `true`.
+    --linter                     The tool to use for         [string] [choices:
+                                 running lint checks.         "eslint", "none"]
+                                                            [default: "eslint"]
+    --prefix, -p                 The prefix to apply to                [string]
+                                 generated selectors.
+    --selector                   The HTML selector to                  [string]
+                                 use for this component.
+                                 Disclaimer: This option
+                                 is only valid when
+                                 `--standalone` is set
+                                 to `true`.
+    --setParserOptionsProject    Whether or not to                    [boolean]
+                                 configure the ESLint
+                                 `parserOptions.project`
+                                 option. We do not do
+                                 this by default for
+                                 lint performance
+                                 reasons.
+    --simpleName                 Don't include the                    [boolean]
+                                 directory in the name
+                                 of the module or
+                                 standalone component
+                                 entry of the library.
+    --skipModule                 Whether to skip the                  [boolean]
+                                 creation of a default
+                                 module when generating
+                                 the library.
+    --skipSelector               Specifies if the                     [boolean]
+                                 component should have a
+                                 selector or not.
+                                 Disclaimer: This option
+                                 is only valid when
+                                 `--standalone` is set
+                                 to `true`.
+    --skipTests                  Do not create `spec.ts`              [boolean]
+                                 test files for the new
+                                 component. Disclaimer:
+                                 This option is only
+                                 valid when
+                                 `--standalone` is set
+                                 to `true`.
+    --skipTsConfig               Do not update                        [boolean]
+                                 `tsconfig.json` for
+                                 development experience.
+    --standalone                 Generate a library that    [boolean] [default:
+                                 uses a standalone                        true]
+                                 component instead of a
+                                 module as the entry
+                                 point.
+    --strict                     Create a library with      [boolean] [default:
+                                 stricter type checking                   true]
+                                 and build optimization
+                                 options.
+    --style                      The file extension or       [string] [choices:
+                                 preprocessor to use for "css", "scss", "sass",
+                                 style files, or `none`         "less", "none"]
+                                 to skip generating the        [default: "css"]
+                                 style file. Disclaimer:
+                                 This option is only
+                                 valid when
+                                 `--standalone` is set
+                                 to `true`.
+    --tags                       Add tags to the library               [string]
+                                 (used for linting).
+    --unitTestRunner             Test runner to use for      [string] [choices:
+                                 unit tests.                  "jest", "vitest",
+                                                              "none"] [default:
+                                                                        "jest"]
+    --viewEncapsulation, -v      The view encapsulation      [string] [choices:
+                                 strategy to use in the     "Emulated", "None",
+                                 new component.                    "ShadowDom"]
+                                 Disclaimer: This option
+                                 is only valid when
+                                 `--standalone` is set
+                                 to `true`.
+    --skipFormat                 Skip formatting files.               [boolean]
+    --skipPackageJson            Do not add dependencies              [boolean]
+                                 to `package.json`.
+    --standaloneConfig           Split the project          [boolean] [default:
+                                 configuration into                       true]
+                                 `<projectRoot>/project.
+                                 json` rather than
+                                 including it inside
+                                 `workspace.json`.
+
+
+
+Find more information and examples at: https://nx.dev/nx-api/angular/generators/library
+

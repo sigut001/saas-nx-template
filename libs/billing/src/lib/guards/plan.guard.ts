@@ -1,5 +1,5 @@
 import { inject } from '@angular/core';
-import { CanActivateFn, Router, ActivatedRouteSnapshot } from '@angular/router';
+import { CanActivateFn, Router } from '@angular/router';
 import { BillingService } from '../billing.service';
 
 /**
@@ -14,7 +14,7 @@ import { BillingService } from '../billing.service';
  * ```
  */
 export function planGuard(requiredPlan: string): CanActivateFn {
-  return (_route: ActivatedRouteSnapshot) => {
+  return () => {
     const billing = inject(BillingService);
     const router  = inject(Router);
 
