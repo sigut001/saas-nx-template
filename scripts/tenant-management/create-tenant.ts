@@ -32,6 +32,18 @@ export interface CreateTenantConfig {
   };
   targetFirebaseConfig: TargetFirebaseConfig;
   /**
+   * Ein untypisierter Satz von Schlüssel-Werte-Paaren für Konfigurationen
+   * (z.B. CUSTOMER_DOMAIN), die Frontend-Modulen konfigurationsfrei 
+   * zur Verfügung stehen sollen.
+   */
+  vault?: Record<string, string | undefined>;
+  /**
+   * Generierte Analytics-Widgets für das Dashboard (z.B. PostHog Insights)
+   */
+  dashboardConfig?: {
+    widgets: any[];
+  };
+  /**
    * Die bereits authentifizierte Firebase Admin-Instanz (Referenz auf die SaaS-Master-DB).
    */
   masterAdminDbInstance: admin.app.App;
@@ -102,7 +114,11 @@ export async function createTenant(config: CreateTenantConfig): Promise<string> 
     
     integrations: {
       'target-firebase': publicTargetConfig
-    }
+    },
+    // Optionaler Tresor: Liefert dem Frontend (z.B. Analytics-Modulen) Variablen wie CUSTOMER_DOMAIN
+    ...(config.vault ? { vault: config.vault } : {}),
+    // Dashboard Config (PostHog KPIs)
+    ...(config.dashboardConfig ? { dashboardConfig: config.dashboardConfig } : {})
   }, { merge: true });
 
   // 2. GEHEIME DATEN (Der Tresor - Nur für Cloud Functions lesbar!)

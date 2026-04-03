@@ -8,7 +8,7 @@ export const SAAS_CONFIG: SaaSConfig = {
   features: {
     publicSignup: false,        // Geschlossener Admin
     googleLogin: true,
-    emailLogin: true,
+    emailLogin: false,
     inviteOnly: true,           // Nur mit Einladung
     passwordReset: true,
     emailVerification: true,

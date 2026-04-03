@@ -49,7 +49,24 @@ export class TenantIntegrationService {
       // ECHTZEIT-BINDUNG (onSnapshot) statt einmaligem Lesezugriff (getDoc)
       this.unsubscribeProfile = onSnapshot(userRef, (snap) => {
         if (snap.exists()) {
-          this.userProfile.set(snap.data() as UserProfile);
+          const data = snap.data();
+          
+          // RESILIENZ-UPDATE: Fallback für unvollständige/alte Test-Accounts ohne dashboardConfig
+          if (!data['dashboardConfig']) {
+            data['dashboardConfig'] = {
+              widgets: [
+                { id: 'weekly_visitors', title: 'Besucher (7 Tage)', type: 'TREND_NUMBER', posthogUrl: 'https://eu.i.posthog.com/api/environments/fiktiv/endpoints/abc1' },
+                { id: 'conversion_rate', title: 'Conversion Rate', type: 'PERCENTAGE', posthogUrl: 'https://eu.i.posthog.com/api/environments/fiktiv/endpoints/abc2', meta: { subtitle: 'Kontaktanfragen' } },
+                { id: 'top_pages', title: 'Beliebteste Seiten', type: 'LIST', posthogUrl: 'https://eu.i.posthog.com/api/environments/fiktiv/endpoints/abc3' }
+              ]
+            };
+          }
+          if (!data['vault']) {
+            data['vault'] = { CUSTOMER_DOMAIN: 'qubits-digital.de' };
+          }
+          
+          console.log(`[TenantIntegration] Fetched Profile for UID: ${uid}`, data);
+          this.userProfile.set(data as UserProfile);
         } else {
           console.warn(`[TenantIntegration] user document users/${uid} not found. Modules might be blocked.`);
           this.userProfile.set({ uid, email: this._auth.currentUser()?.email ?? '' } as UserProfile);

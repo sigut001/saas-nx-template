@@ -1,4 +1,4 @@
 export * from './lib/lib.routes';
 
-export * from './lib/analytics/analytics.component';
+export * from './lib/shell/shell.component';
 export * from './lib/manifest';

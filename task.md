@@ -1,0 +1,11 @@
+- [x] Brainstorming und Konzept für Web-Analytics im Zusammenhang mit Firebase und dem SaaS Analytics-Modul erstellen.
+- [x] Tiefgehende Recherche über Top-Marketing-Metriken (2024/2026), PostHog, Google Looker Studio und kostenlose APIs für Custom Dashboards.
+- [x] Klärung der strategischen Architektur zwischen Firebase (Google Analytics) vs. PostHog.
+- [x] Klärung zu PostHog Mandantenfähigkeit (Projects vs. Accounts) und Google Ads Integration.
+- [x] Recherche bezüglich PostHog Free-Tier Limits über mehrere Kunden hinweg & CrUX vs Lighthouse Web Vitals.
+- [x] Machbarkeitsanalyse: HubSpot API Integration für White-Label CRM-Dashboarding.
+- [x] Detaillierte API-Referenzen & JSON-Modelle im `docs/` Ordner erstellen (Teil 1: PostHog abgeschlossen).
+- [x] Detaillierte API-Referenzen & JSON-Modelle erstellen (Teil 2: Google Search Console abgeschlossen).
+- [x] Detaillierte API-Referenzen & JSON-Modelle erstellen (Teil 3: Google PageSpeed / Web Vitals abgeschlossen).
+- [x] Visuelle Skizzierung der "Feature-Slices" Architektur im Repo (`libs/features/web-entwicklung/analytics/src/lib`).
+- [x] UI Redesign Login-Screen & Integration Google Search Console Setup in `01-target-projekt-setup.md`.

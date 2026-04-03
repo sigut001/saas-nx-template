@@ -162,12 +162,27 @@ npx nx g ./tools/saas-generators:saas-feature name --directory=features/web-entw
 
 ---
 
-## 🎯 Nächster konkreter Schritt: Analytics & Documents Module
+## 🎯 Phase 8: Web-Entwicklungs-Portal "Analytics & CRM" (Konzeptioniert)
 
-**Phase 8 – Web-Entwicklungs-Portal weiter ausbauen:**
+Nach unserer umfassenden Architektur-Analyse liegt der Blueprint für das White-Label Kunden-Dashboard vor:
 
-1. **Analytics Modul (`libs/features/web-entwicklung/analytics`) mit Leben füllen**
-   - KPI-Charts, Besucherstatistiken, Traffic-Kurven.
-2. **Documents Modul (`libs/features/web-entwicklung/documents`) mit Leben füllen**
-   - Dokumentverwaltung, Formulare, Upload-Masken.
-3. Content Management System (CMS) abschließen und mit den restlichen App-Logiken verknüpfen.
+### 8.1 Vorbereitende API & Daten-Recherche (Nächster Task!)
+- [ ] Detaillierte API-Recherche durchführen: Dokumentationen von PostHog, Google Search Console, Google PageSpeed Insights und HubSpot sichten.
+- [ ] Konkrete Endpunkte, Rate-Limits und JSON-Responses für unsere Anwendungsfälle dokumentieren.
+- [ ] Festlegen, *welche* exakten Datenpunkte in den Angular-Charts visualisiert werden sollen (Mock-Daten-Struktur für das UI-Design aufbauen).
+
+### 8.2 Analytics Modul (`libs/features/web-entwicklung/analytics`)
+- [ ] **PostHog API Engine:** Traffic, Events, User-Trichter und Screen-Aufnahmen über die kostenlose PostHog JSON API anbinden (Organisation-pro-Kunde Architektur).
+- [ ] **Google Search Console API:** SEO-Ranking, Klicks und Top-Keywords integrieren.
+- [ ] **Google PageSpeed Insights API:** Echtzeit-Abruf der Core Web Vitals (Lighthouse Labordaten + reale CrUX-Felddaten).
+- [ ] *Hinweis:* Firebase Analytics (GA4) verbleibt im Hintergrund-Template der Websites als stummer Daten-Feeder für Google Ads.
+
+### 8.3 CRM / Leads Modul (`libs/features/web-entwicklung/crm`)
+- [ ] Neues Modul via Custom Schematic generieren (`npx nx g ./tools/saas-generators:saas-feature crm --directory=features/web-entwicklung`).
+- [ ] **HubSpot API Service:** Leads, Deals und Sales-Pipelines über HubSpot "Private Apps" (Free-Tier) abfragen. Dies bleibt architektonisch strikt vom Analytics-Modul getrennt!
+
+### 8.4 Documents Modul (`libs/features/web-entwicklung/documents`)
+- [ ] Dokumentverwaltung, Datei-Uploads und Formular-Masken implementieren.
+
+### 8.5 CMS-Integration abschließen
+- [ ] Content Management System nahtlos in das neue White-Label Dashboard neben den Analytics & CRM Modulen verknüpfen.

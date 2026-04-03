@@ -12,6 +12,7 @@ import {
   updateProfile,
   User,
 } from 'firebase/auth';
+import { getFirestore, doc, getDoc } from 'firebase/firestore';
 import { FIREBASE_AUTH_CONFIG } from './auth-module.config';
 import { FIREBASE_AUTH } from './auth.providers';
 
@@ -44,7 +45,29 @@ export class AuthService {
 
   async loginWithGoogle(): Promise<void> {
     const provider = new GoogleAuthProvider();
-    await signInWithPopup(this.auth, provider);
+    // Erzwingt, dass Google IMMER die Account-Auswahl anzeigt, anstatt sich den letzten Cache zu merken
+    provider.setCustomParameters({ prompt: 'select_account' });
+    
+    // 1. Google OAuth Anmeldung (Legt Nutzer stumm an, wenn er validiert wird)
+    const result = await signInWithPopup(this.auth, provider);
+
+    // 2. Invite-Only Gatekeeper: Prüfe, ob das Skript ein Firestore-Profil hinterlegt hat
+    const isInviteOnly = this.config.features?.inviteOnly ?? true; // By default strict für SaaS
+    
+    if (isInviteOnly && result.user) {
+      const db = getFirestore(this.auth.app);
+      const userRef = doc(db, 'users', result.user.uid);
+      const snap = await getDoc(userRef);
+      
+      if (!snap.exists()) {
+        // Fallback: Nutzer existiert zwar bei Google, wurde aber von uns NIE eingerichtet
+        // Konsequenz: Account sofort serverseitig wieder aus Firebase löschen und abbrechen!
+        await result.user.delete().catch(() => signOut(this.auth)); 
+        throw { code: 'auth/invite-only' }; // Spezifischer Code, den die LoginComponent fangen kann
+      }
+    }
+
+    // 3. Zugang gewährt -> Dashboard
     await this.router.navigateByUrl(this.redirectAfterLogin);
   }
 

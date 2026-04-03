@@ -26,4 +26,12 @@ export interface UserProfile {
    * (z.B. 'target-firebase') hinterlegt ist.
    */
   integrations?: Record<string, any>;
+
+  /**
+   * Generische Widget-Konfigurationen (wird vom KI-Agent für das
+   * kundenspezifische Dashboard z.B. aus PostHog generiert).
+   */
+  dashboardConfig?: {
+    widgets: any[];
+  };
 }

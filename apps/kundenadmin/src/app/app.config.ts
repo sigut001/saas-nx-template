@@ -28,7 +28,8 @@ import {
   EditOutline,
   FileTextOutline,
   CreditCardOutline,
-  GoogleOutline
+  GoogleOutline,
+  AppstoreOutline
 } from '@ant-design/icons-angular/icons';
 
 registerLocaleData(en);
@@ -48,7 +49,8 @@ const icons = [
   EditOutline,
   FileTextOutline,
   CreditCardOutline,
-  GoogleOutline
+  GoogleOutline,
+  AppstoreOutline
 ];
 
 export const appConfig: ApplicationConfig = {
